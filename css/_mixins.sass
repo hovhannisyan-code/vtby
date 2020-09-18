@@ -1,0 +1,35 @@
+@mixin col($number)
+  flex: 0 0 (100 / $number + %)
+  max-width: (100 / $number + %)
+
+@mixin justify($side)
+  $sides: ("end": flex-end, "center": center, "start": flex-start, "around": space-around, "evenly": space-evenly, "between": space-between)
+  
+  justify-content: map-get($sides, $side)
+
+@mixin align($side, $self: false)
+  $sides: ("end": flex-end, "center": center, "start": flex-start)
+  
+  @if $self == true 
+    align-self: map-get($sides, $side)
+  @else
+    align-items: map-get($sides, $side)
+   
+@mixin highlight($color)
+  @if (lightness($color) > 35)
+    color: black
+  @else 
+    color: white
+
+  background-color: $color
+  border: 1px solid $color
+
+  transition: .25s background-color, .25s color, .25s border-color
+
+  &:hover
+    @if (lightness($color) > 20)
+      border-color: darken($color, 10%)
+      background-color: darken($color, 10%)
+    @else
+      border-color: lighten($color, 10%)
+      background-color: lighten($color, 10%)
