@@ -1,0 +1,51 @@
+.footer
+    background: $white-dark
+
+    padding: 25px 0
+
+    .row
+        margin-bottom: 25px
+
+        &:last-child
+            margin-bottom: 0px
+
+    &__contact
+        display: flex
+        flex-direction: row
+
+        .contact__inner
+            display: flex
+            flex-direction: column
+
+        .contact__phones
+            display: flex
+            flex-direction: column
+
+            margin-bottom: 15px
+
+        .contact__messengers
+            display: flex
+            flex-direction: column
+
+            .messengers__title
+                margin-bottom: 10px
+
+            .messengers__icons
+                display: flex
+                flex-direction: row
+
+                a
+                    margin-right: 20px
+
+                    &:last-child
+                        margin-right: 0
+
+                    &:hover
+                        svg
+                            color: $facebook
+
+                svg
+                    color: $gray-light
+
+                    width: 30px
+                    height: 30px
