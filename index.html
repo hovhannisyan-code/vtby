@@ -200,6 +200,57 @@
                 </ul>
             </div>
         </header>
+        <section class="section section--ticket-search">
+            <div class="container">
+                <h2 class="section__heading">Продажа международных автобусных билетов</h2>
+                <form action="#" method="POST" id="ticket-form" class="ticket-form">
+                    <div class="items">
+                        <div class="item">
+                            <input type="text" name="from" class="ticket-form__input" placeholder="Откуда" required>
+                        </div>
+                        <div class="replace-icon">
+                            <img src="./img/icons/replace.png" alt="Icon">
+                        </div>
+                        <div class="item">
+                            <input type="text" name="to" class="ticket-form__input" placeholder="Куда" required>
+                        </div>
+                        <div class="item item--date item--icon">
+                            <input type="text" name="there" class="ticket-form__input" placeholder="Туда" readonly disabled>
+                            <div class="item__icon">
+                                <img src="./img/icons/calendar.png" alt="Icon">
+                            </div>
+                        </div>
+                        <div class="item item--date item--icon">
+                            <input type="text" name="back" class="ticket-form__input" placeholder="Обратно" readonly disabled>
+                            <div class="item__icon">
+                                <img src="./img/icons/calendar.png" alt="Icon">
+                            </div>
+                        </div>
+                        <div class="item item--select">
+                            <select name="passengers" id="passengers">
+                                <option value="1">1 пассажир</option>
+                                <option value="2">2 пассажира</option>
+                                <option value="3">3 пассажира</option>
+                                <option value="4">4 пассажира</option>
+                                <option value="5">5 пассажиров</option>
+                                <option value="6">6 пассажиров</option>
+                                <option value="7">7 пассажиров</option>
+                                <option value="8">8 пассажиров</option>
+                                <option value="9">9 пассажиров</option>
+                                <option value="10">10 пассажиров</option>
+                            </select>
+                            <div class="item__preview">
+                                <span class="preview__selected">Пассажиров</span>
+                                <span class="preview__icon">
+                                    <svg><use xlink:href="#icon-dropdown"></use></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="button button--ticket-search">Найти билет</button>
+                </form>
+            </div>
+        </section>
         <section class="section section--news section--underline">
             <div class="container">
                 <h2 class="section__heading">Новости и спецпредложения</h2>
