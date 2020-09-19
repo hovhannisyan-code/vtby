@@ -1,0 +1,29 @@
+.button
+    display: flex
+    align-items: center
+    justify-content: center
+
+    text-transform: uppercase
+
+    width: 180px
+    height: 50px
+
+    padding: 0 20px
+
+    border-radius: 3px
+
+    &:not(&--outline)
+        +button('solid', $yellow-light, $yellow, $yellow-dark)
+
+    svg
+        width: 20px
+        height: 20px
+
+        margin-right: 10px
+
+    &--outline
+        +button('outline', $facebook, $facebook, darken($facebook, 10%))
+    
+    &--link
+        &:hover
+            text-decoration: none

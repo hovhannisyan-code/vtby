@@ -33,3 +33,30 @@
     @else
       border-color: lighten($color, 10%)
       background-color: lighten($color, 10%)
+
+@mixin button($type, $normal, $hover, $active)
+  @if ($type == 'solid')
+    background-color: $normal
+
+    transition: background-color $transition--default
+
+    &:hover
+      background-color: $hover 
+
+    &:active
+      background-color: $active
+  @elseif ($type == 'outline')
+    color: $normal
+
+    border: 1px solid $normal
+
+    transition: background-color $transition--default, color $transition--default
+
+    &:hover
+      color: #fff
+
+      background-color: $hover
+
+    &:active
+      background-color: $active
+
