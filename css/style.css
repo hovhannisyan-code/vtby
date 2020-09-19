@@ -29,7 +29,7 @@ button:focus {
 }
 
 .section {
-  padding: 60px 0;
+  padding: 90px 0;
 }
 
 .section--underline {
@@ -37,9 +37,12 @@ button:focus {
 }
 
 .section__heading {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   font-size: 24px;
   text-transform: uppercase;
-  margin-bottom: 50px;
+  margin: 0 auto 50px auto;
 }
 
 .button {
@@ -97,6 +100,130 @@ button:focus {
 
 .button--link:hover {
   text-decoration: none;
+}
+
+.route {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  background-color: #f3f3f3;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+.route:hover {
+  background-color: #e3f3ff;
+}
+
+.route.active .route__open {
+  color: #4857a9;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.route.active .route__inner {
+  display: block;
+}
+
+.route .route__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.route .route__header .route__country-flag {
+  width: 32px;
+  height: 32px;
+}
+
+.route .route__header .route__country-flag img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  overflow: hidden;
+}
+
+.route .route__header .route__location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 15px;
+}
+
+.route .route__header .route__location .route__city {
+  font-size: 14px;
+  color: #4857a9;
+}
+
+.route .route__header .route__location .route__country {
+  font-size: 12px;
+  color: #a3a3a3;
+}
+
+.route .route__header .route__open {
+  margin-left: auto;
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+
+.route .route__header .route__open svg {
+  width: 15px;
+  height: 10px;
+  color: #a3a3a3;
+}
+
+.route .route__inner {
+  display: none;
+  margin-top: 15px;
+}
+
+.route .route__inner .route__variant {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 12px;
+  line-height: 1;
+  margin-bottom: 10px;
+  color: #4857a9;
+}
+
+.route .route__inner .route__variant:last-child {
+  margin-bottom: 0;
+}
+
+.route .route__inner .route__variant .route__price {
+  text-transform: uppercase;
 }
 
 .header {
