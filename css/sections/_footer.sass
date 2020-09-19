@@ -1,11 +1,9 @@
 .footer
     background: $white-dark
 
-    padding: 30px 70px
+    padding: 30px 0
 
     hr
-        height: 1px
-
         margin: 25px 0
 
         background: $gray-pink
@@ -74,11 +72,11 @@
 
                 padding: 0
 
-                background: $gray-light
-
                 text-transform: uppercase
 
                 color: #fff
+
+                +button('solid', $gray-light, $facebook, darken($facebook, 10%))
 
         .subscribe__socials
             display: flex
@@ -105,4 +103,7 @@
         flex-direction: column
 
         font-size: 12px
+
+        .copyright__text
+            margin-top: 10px
 
