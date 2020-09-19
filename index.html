@@ -141,6 +141,9 @@
                     </g>
                 </g>
             </symbol>
+            <symbol id="icon-dropdown" viewBox="0 0 386.257 386.257" style="enable-background:new 0 0 386.257 386.257;">
+                <polygon points="0,96.879 193.129,289.379 386.257,96.879" fill="currentColor"/>
+            </symbol>
         </svg>
     </div>
     <div class="wrapper">
@@ -197,6 +200,251 @@
                 </ul>
             </div>
         </header>
+        <section class="section section--ticket-search">
+            <div class="container">
+                <h2 class="section__heading">Продажа международных автобусных билетов</h2>
+                <form action="#" method="POST" id="ticket-form" class="ticket-form">
+                    <div class="items">
+                        <div class="item">
+                            <input type="text" name="from" class="ticket-form__input" placeholder="Откуда" required>
+                        </div>
+                        <div class="replace-icon">
+                            <img src="./img/icons/replace.png" alt="Icon">
+                        </div>
+                        <div class="item">
+                            <input type="text" name="to" class="ticket-form__input" placeholder="Куда" required>
+                        </div>
+                        <div class="item item--date item--icon">
+                            <input type="text" name="there" class="ticket-form__input" placeholder="Туда" readonly disabled>
+                            <div class="item__icon">
+                                <img src="./img/icons/calendar.png" alt="Icon">
+                            </div>
+                        </div>
+                        <div class="item item--date item--icon">
+                            <input type="text" name="back" class="ticket-form__input" placeholder="Обратно" readonly disabled>
+                            <div class="item__icon">
+                                <img src="./img/icons/calendar.png" alt="Icon">
+                            </div>
+                        </div>
+                        <div class="item item--select">
+                            <select name="passengers" id="passengers">
+                                <option value="1">1 пассажир</option>
+                                <option value="2">2 пассажира</option>
+                                <option value="3">3 пассажира</option>
+                                <option value="4">4 пассажира</option>
+                                <option value="5">5 пассажиров</option>
+                                <option value="6">6 пассажиров</option>
+                                <option value="7">7 пассажиров</option>
+                                <option value="8">8 пассажиров</option>
+                                <option value="9">9 пассажиров</option>
+                                <option value="10">10 пассажиров</option>
+                            </select>
+                            <div class="item__preview">
+                                <span class="preview__selected">Пассажиров</span>
+                                <span class="preview__icon">
+                                    <svg><use xlink:href="#icon-dropdown"></use></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="button button--ticket-search">Найти билет</button>
+                </form>
+            </div>
+        </section>
+        <section class="section section--news section--underline">
+            <div class="container">
+                <h2 class="section__heading">Новости и спецпредложения</h2>
+                <div class="section__inner">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="post">
+                                <div class="post__thumbnail">
+                                    <img src="./img/posts/1.jpg" alt="Bus">
+                                </div>
+                                <div class="post__content">
+                                    <h4 class="post__title">Состояться рейсы Бобруйск-Минск-Москва-Минск-Бобруйск</h4>
+                                    <p class="post__excerpt">Информируем о том, что для граждан РБ, состоятся рейсы по маршруту Москва – Орша – Минск – Бобруйск 08.05.20...</p>
+                                    <a href="#" role="button" class="button button--link button--outline button--post">Узнать подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="post">
+                                <div class="post__thumbnail">
+                                    <img src="./img/posts/2.jpg" alt="Bus">
+                                </div>
+                                <div class="post__content">
+                                    <h4 class="post__title">Изменения в расписании</h4>
+                                    <p class="post__excerpt">На период рождественских и новогодних праздников будут закрыты рейсы по линиям: - «Минск – Варшава» по направлению из Минска в Варшаву на 31.12.2019...</p>
+                                    <a href="#" role="button" class="button button--link button--outline button--post">Узнать подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="post">
+                                <div class="post__thumbnail">
+                                    <img src="./img/posts/3.jpg" alt="Bus">
+                                </div>
+                                <div class="post__content">
+                                    <h4 class="post__title">Изменения в расписании по маршруту Минск–Прага–Минск</h4>
+                                    <p class="post__excerpt">Добавлены рейсы с выездом из РБ по средам в 21:00 с 18.12.2019 и из Праги по пятницам в 09:00 с 20.12.2019. Рейсы...</p>
+                                    <a href="#" role="button" class="button button--link button--outline button--post">Узнать подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section--popular-routes">
+            <div class="container">
+                <h2 class="section__heading">Популярные маршруты</h2>
+                <div class="section__inner">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="route">
+                                <div class="route__header">
+                                    <div class="route__country-flag">
+                                        <img src="./img/flags/russia.png" alt="Russia">
+                                    </div>
+                                    <div class="route__location">
+                                        <span class="route__city">Москва</span>
+                                        <span class="route__country">Россия</span>
+                                    </div>
+                                    <span class="route__open">
+                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
+                                    </span>
+                                </div>
+                                <div class="route__inner">
+                                    <div class="route__variant">
+                                        <span class="route__name">Бобруйск - Москва</span>
+                                        <span class="route__price">от 45 byn</span>
+                                    </div>
+                                    <div class="route__variant">
+                                        <span class="route__name">Минск - Москва</span>
+                                        <span class="route__price">от 35 byn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="route">
+                                <div class="route__header">
+                                    <div class="route__country-flag">
+                                        <img src="./img/flags/poland.png" alt="Poland">
+                                    </div>
+                                    <div class="route__location">
+                                        <span class="route__city">Варшава</span>
+                                        <span class="route__country">Польша</span>
+                                    </div>
+                                    <span class="route__open">
+                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
+                                    </span>
+                                </div>
+                                <div class="route__inner">
+                                    <div class="route__variant">
+                                        <span class="route__name">Минск - Варшава</span>
+                                        <span class="route__price">от 22.5 byn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="route">
+                                <div class="route__header">
+                                    <div class="route__country-flag">
+                                        <img src="./img/flags/russia.png" alt="Russia">
+                                    </div>
+                                    <div class="route__location">
+                                        <span class="route__city">Санкт-Петербург</span>
+                                        <span class="route__country">Россия</span>
+                                    </div>
+                                    <span class="route__open">
+                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
+                                    </span>
+                                </div>
+                                <div class="route__inner">
+                                    <div class="route__variant">
+                                        <span class="route__name">Бобруйск - Санкт-Петербург</span>
+                                        <span class="route__price">от 27.5 byn</span>
+                                    </div>
+                                    <div class="route__variant">
+                                        <span class="route__name">Могилёв - Санкт-Петербург</span>
+                                        <span class="route__price">от 50 byn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="route">
+                                <div class="route__header">
+                                    <div class="route__country-flag">
+                                        <img src="./img/flags/czech.png" alt="Czech">
+                                    </div>
+                                    <div class="route__location">
+                                        <span class="route__city">Прага</span>
+                                        <span class="route__country">Чехия</span>
+                                    </div>
+                                    <span class="route__open">
+                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
+                                    </span>
+                                </div>
+                                <div class="route__inner">
+                                    <div class="route__variant">
+                                        <span class="route__name">Минск - Прага</span>
+                                        <span class="route__price">от 118.75 byn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="route">
+                                <div class="route__header">
+                                    <div class="route__country-flag">
+                                        <img src="./img/flags/germany.png" alt="Germany">
+                                    </div>
+                                    <div class="route__location">
+                                        <span class="route__city">Кёльн</span>
+                                        <span class="route__country">Германия</span>
+                                    </div>
+                                    <span class="route__open">
+                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
+                                    </span>
+                                </div>
+                                <div class="route__inner">
+                                    <div class="route__variant">
+                                        <span class="route__name">Гомель - Кёльн</span>
+                                        <span class="route__price">от 237.5 byn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="route">
+                                <div class="route__header">
+                                    <div class="route__country-flag">
+                                        <img src="./img/flags/poland.png" alt="Poland">
+                                    </div>
+                                    <div class="route__location">
+                                        <span class="route__city">Краков</span>
+                                        <span class="route__country">Польша</span>
+                                    </div>
+                                    <span class="route__open">
+                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
+                                    </span>
+                                </div>
+                                <div class="route__inner">
+                                    <div class="route__variant">
+                                        <span class="route__name">Минск - Краков</span>
+                                        <span class="route__price">от 35 byn</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="section section--social section--underline">
             <div class="container">
                 <div class="section__inner">

@@ -29,7 +29,7 @@ button:focus {
 }
 
 .section {
-  padding: 60px 0;
+  padding: 90px 0;
 }
 
 .section--underline {
@@ -37,9 +37,12 @@ button:focus {
 }
 
 .section__heading {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   font-size: 24px;
   text-transform: uppercase;
-  margin-bottom: 50px;
+  margin: 0 auto 50px auto;
 }
 
 .button {
@@ -57,12 +60,14 @@ button:focus {
   height: 50px;
   padding: 0 20px;
   border-radius: 3px;
+  border: none;
 }
 
 .button:not(.button--outline) {
   background-color: #f3d93b;
   -webkit-transition: background-color 0.25s;
   transition: background-color 0.25s;
+  border-bottom: 1px solid #f2bc3a;
 }
 
 .button:not(.button--outline):hover {
@@ -97,6 +102,195 @@ button:focus {
 
 .button--link:hover {
   text-decoration: none;
+}
+
+.route {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  background-color: #f3f3f3;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+.route:hover {
+  background-color: #e3f3ff;
+}
+
+.route.active .route__open {
+  color: #4857a9;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.route.active .route__inner {
+  display: block;
+}
+
+.route .route__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.route .route__header .route__country-flag {
+  width: 32px;
+  height: 32px;
+}
+
+.route .route__header .route__country-flag img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  overflow: hidden;
+}
+
+.route .route__header .route__location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 15px;
+}
+
+.route .route__header .route__location .route__city {
+  font-size: 14px;
+  color: #4857a9;
+}
+
+.route .route__header .route__location .route__country {
+  font-size: 12px;
+  color: #a3a3a3;
+}
+
+.route .route__header .route__open {
+  margin-left: auto;
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+
+.route .route__header .route__open svg {
+  width: 15px;
+  height: 10px;
+  color: #a3a3a3;
+}
+
+.route .route__inner {
+  display: none;
+  margin-top: 15px;
+}
+
+.route .route__inner .route__variant {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 12px;
+  line-height: 1;
+  margin-bottom: 10px;
+  color: #4857a9;
+}
+
+.route .route__inner .route__variant:last-child {
+  margin-bottom: 0;
+}
+
+.route .route__inner .route__variant .route__price {
+  text-transform: uppercase;
+}
+
+.post {
+  border: 2px solid #4857a9;
+  border-radius: 5px;
+  -webkit-transition: border 0.25s;
+  transition: border 0.25s;
+}
+
+.post:hover {
+  border: 2px solid #f3d93b;
+}
+
+.post__thumbnail {
+  width: 100%;
+  height: 300px;
+  border-radius: 5px 5px 0 0;
+}
+
+.post__thumbnail img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  overflow: hidden;
+}
+
+.post__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 0 0 5px 5px;
+  padding: 20px;
+  background-color: #f3f3f3;
+}
+
+.post__content .post__title {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.post__content .post__excerpt {
+  color: #747577;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.post__content .button--post {
+  width: 100%;
+  height: 40px;
+}
+
+.post__content .button--post:hover .post {
+  border: 1px solid red;
 }
 
 .header {
@@ -369,6 +563,7 @@ button:focus {
   background-color: #596271;
   -webkit-transition: background-color 0.25s;
   transition: background-color 0.25s;
+  border-bottom: 1px solid #f2bc3a;
 }
 
 .footer__subscribe .subscribe__form button[type="submit"]:hover {
@@ -465,4 +660,157 @@ button:focus {
   width: 180px;
   height: 40px;
   margin: 30px auto 0 auto;
+}
+
+.section.section--ticket-search {
+  background-image: url("../img/backgrounds/ticket-form.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 630px;
+  padding: 60px 0;
+}
+
+.section.section--ticket-search .section__heading {
+  color: #fff;
+  font-size: 32px;
+  text-transform: none;
+  margin-bottom: 80px;
+}
+
+.section.section--ticket-search .button--ticket-search {
+  font-size: 22px;
+  text-transform: none;
+  width: 210px;
+  height: 60px;
+  margin: 50px auto 0 auto;
+}
+
+.section.section--ticket-search .ticket-form {
+  border-radius: 3px;
+}
+
+.section.section--ticket-search .ticket-form .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.section.section--ticket-search .ticket-form .items .item {
+  position: relative;
+  width: 20%;
+  padding: 20px;
+  border-right: 2px solid #b6b4b6;
+}
+
+.section.section--ticket-search .ticket-form .items .item__icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.section.section--ticket-search .ticket-form .items .item__icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.section.section--ticket-search .ticket-form .items .item:last-child {
+  border-right: none;
+}
+
+.section.section--ticket-search .ticket-form .items .item .ticket-form__input {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.section.section--ticket-search .ticket-form .items .item--icon .ticket-form__input {
+  padding-right: 20px;
+}
+
+.section.section--ticket-search .ticket-form .items .item--select select {
+  display: none;
+}
+
+.section.section--ticket-search .ticket-form .items .item--select .item__preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.section.section--ticket-search .ticket-form .items .item--select .item__preview .preview__selected {
+  color: #747577;
+}
+
+.section.section--ticket-search .ticket-form .items .item--select .item__preview .preview__icon svg {
+  width: 15px;
+  height: 10px;
+}
+
+.section.section--ticket-search .ticket-form .items .replace-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.section.section--ticket-search .ticket-form .items .replace-icon img {
+  width: 100%;
+  height: 100%;
 }
