@@ -330,6 +330,10 @@ button:focus {
           flex-direction: row;
 }
 
+.header__buttons > * {
+  margin-right: 15px;
+}
+
 .header__buttons button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -340,7 +344,6 @@ button:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-right: 15px;
   border: 1px solid #f3d93b;
   border-radius: 50%;
   width: 32px;
@@ -380,7 +383,7 @@ button:focus {
   position: relative;
 }
 
-.header__buttons .button--menu::before {
+.header__buttons .button--dropdown::before {
   content: '';
   display: none;
   position: absolute;
@@ -392,8 +395,53 @@ button:focus {
   background: #fff;
 }
 
-.header__buttons .button--menu.active::before {
+.header__buttons .button--dropdown.active::before {
   display: block;
+}
+
+.header .language-select {
+  position: relative;
+}
+
+.header .language-select .language-list {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  -webkit-transform: translate(-50%, 20px);
+          transform: translate(-50%, 20px);
+  border-radius: 3px;
+  padding: 10px 20px;
+  background: #fff;
+}
+
+.header .language-select .language-list.show {
+  display: block;
+}
+
+.header .language-select .language-list button {
+  border: none;
+  border-radius: 0;
+  width: inherit;
+  height: inherit;
+  padding: 0;
+  margin: 0 0 5px 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.header .language-select .language-list button.active {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #f3d93b;
+          text-decoration-color: #f3d93b;
+}
+
+.header .language-select .language-list button:hover {
+  color: #f3d93b;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #f3d93b;
+          text-decoration-color: #f3d93b;
 }
 
 .header__menu {
@@ -563,7 +611,6 @@ button:focus {
   background-color: #596271;
   -webkit-transition: background-color 0.25s;
   transition: background-color 0.25s;
-  border-bottom: 1px solid #f2bc3a;
 }
 
 .footer__subscribe .subscribe__form button[type="submit"]:hover {

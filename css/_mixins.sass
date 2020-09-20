@@ -34,13 +34,14 @@
       border-color: lighten($color, 10%)
       background-color: lighten($color, 10%)
 
-@mixin button($type, $normal, $hover, $active)
+@mixin button($type, $normal, $hover, $active, $bottom)
   @if ($type == 'solid')
     background-color: $normal
 
     transition: background-color $transition--default
 
-    border-bottom: 1px solid $yellow
+    @if ($bottom)
+      border-bottom: 1px solid $hover
 
     &:hover
       background-color: $hover 
