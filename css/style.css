@@ -753,8 +753,75 @@ button:focus {
 .section.section--ticket-search .ticket-form .items .item {
   position: relative;
   width: 20%;
-  padding: 20px;
   border-right: 2px solid #b6b4b6;
+}
+
+.section.section--ticket-search .ticket-form .items .item--dropdown .item__dropdown {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 240px;
+}
+
+.section.section--ticket-search .ticket-form .items .item--dropdown .item__dropdown.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section.section--ticket-search .ticket-form .items .item--dropdown .item__dropdown .dropdown__level .dropdown__header {
+  padding: 5px 20px;
+  font-size: 12px;
+  line-height: 1;
+  color: #747577;
+  background-color: #e8e8e8;
+}
+
+.section.section--ticket-search .ticket-form .items .item--dropdown .item__dropdown .dropdown__level .dropdown__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: calc(100% - 22px);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #f3f3f3;
+  overflow: auto;
+}
+
+.section.section--ticket-search .ticket-form .items .item--dropdown .item__dropdown .dropdown__level .dropdown__list--primary {
+  background-color: #fff;
+}
+
+.section.section--ticket-search .ticket-form .items .item--dropdown .item__dropdown .dropdown__level .dropdown__list .dropdown__item {
+  padding: 10px 20px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+.section.section--ticket-search .ticket-form .items .item--dropdown .item__dropdown .dropdown__level .dropdown__list .dropdown__item:hover {
+  background-color: #e3f3ff;
+}
+
+.section.section--ticket-search .ticket-form .items .item--dropdown .item__dropdown .dropdown__level .dropdown__list .dropdown__item:active {
+  background-color: #b0ddff;
 }
 
 .section.section--ticket-search .ticket-form .items .item__icon {
@@ -787,15 +854,20 @@ button:focus {
 
 .section.section--ticket-search .ticket-form .items .item .ticket-form__input {
   margin: 0;
-  padding: 0;
+  padding: 20px;
   width: 100%;
+  outline-width: 2px;
+  outline-color: #f3d93b;
   border: none;
   background: none;
-  outline: none;
 }
 
 .section.section--ticket-search .ticket-form .items .item--icon .ticket-form__input {
   padding-right: 20px;
+}
+
+.section.section--ticket-search .ticket-form .items .item--select {
+  padding: 20px;
 }
 
 .section.section--ticket-search .ticket-form .items .item--select select {

@@ -44,9 +44,68 @@
 
                 width: 20%
 
-                padding: 20px
-
                 border-right: 2px solid $gray-pink
+
+                &--dropdown
+                    .item__dropdown
+                        display: none
+
+                        flex-direction: row
+
+                        position: absolute
+                        top: 100%
+                        left: 0
+
+                        height: 240px
+
+                        &.active
+                            display: flex
+
+                        .dropdown__level
+                            .dropdown__header
+                                padding: 5px 20px
+
+                                font-size: 12px
+                                line-height: 1
+
+                                color: #747577
+                                
+                                background-color: #e8e8e8
+
+                            .dropdown__list
+                                display: flex
+                                flex-direction: column
+                                justify-content: space-between
+
+                                height: calc(100% - 22px)
+                                width: max-content
+
+                                list-style: none
+
+                                padding: 0
+                                margin: 0
+
+                                background-color: $white-dark
+
+                                overflow: auto
+
+                                &--primary
+                                    background-color: #fff
+
+                                .dropdown__item
+                                    padding: 10px 20px
+
+                                    line-height: 1
+
+                                    cursor: pointer
+
+                                    transition: background-color $transition--default
+
+                                    &:hover
+                                        background-color: $blue-light
+
+                                    &:active
+                                        background-color: darken($blue-light, 10%)
 
                 &__icon
                     position: absolute
@@ -71,21 +130,24 @@
 
                 .ticket-form__input
                     margin: 0
-                    padding: 0
+                    padding: 20px
 
                     width: 100%
+
+                    outline-width: 2px
+                    outline-color: $yellow-light
 
                     border: none
 
                     background: none
-
-                    outline: none
 
                 &--icon
                     .ticket-form__input
                         padding-right: 20px
 
                 &--select
+                    padding: 20px
+                    
                     select
                         display: none
 
