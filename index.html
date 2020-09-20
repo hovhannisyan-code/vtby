@@ -153,8 +153,23 @@
                     <img src="./img/logo.png" alt="Logo">
                 </div>
                 <div class="header__buttons">
-                    <button class="button--text">РУС</button>
-                    <button class="button--menu" id="menu-button">
+                    <div class="language-select">
+                        <button class="button--text button--dropdown" id="language-button">РУС</button>
+                        <div class="language-list" id="language-list" data-type="dropdown">
+                            <form action="#" method="POST" id="language-form">
+                                <div class="language-item">
+                                    <button name="language" value="russian" class="language-button active" disabled>РУС</button>
+                                </div>
+                                <div class="language-item">
+                                    <button name="language" value="english" class="language-button">ENG</button>
+                                </div>
+                                <div class="language-item">
+                                    <button name="language" value="german" class="language-button">DEU</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <button class="button--menu button--dropdown" id="menu-button">
                         <img src="./img/icons/burger-menu.png" alt="Icon">
                     </button>
                     <button>
@@ -162,7 +177,7 @@
                     </button>
                 </div>
             </div>
-            <div class="header__menu" id="menu">
+            <div class="header__menu" id="menu" data-type="dropdown">
                 <ul>
                     <li class="menu__item">
                         <a href="#" class="menu__link">Расписание</a>
