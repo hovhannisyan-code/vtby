@@ -3,6 +3,14 @@
 
     padding: 30px 0
 
+    font-family: $font--rubik
+
+    .row.row--contact
+        justify-content: center
+
+        @media screen and ($breakpoint--lg)
+            justify-content: space-between
+
     hr
         margin: 25px 0
 
@@ -10,7 +18,13 @@
 
     &__contact
         display: flex
-        flex-direction: row
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        @media screen and ($breakpoint--sm)
+            flex-direction: row
+            align-items: flex-start
 
         .contact__inner
             display: flex
@@ -50,6 +64,11 @@
                     height: 30px
     
     &__subscribe
+        margin: 50px 0 0 0
+
+        @media screen and ($breakpoint--lg)
+            margin: 0
+
         .subscribe__title
             display: block
             
@@ -57,9 +76,12 @@
 
         .subscribe__form
             display: flex
-            flex-direction: row
+            flex-direction: column
 
             margin-bottom: 20px
+
+            @media screen and ($breakpoint--sm)
+                flex-direction: row
 
             input
                 width: 100%
@@ -67,6 +89,7 @@
             button[type="submit"]
                 min-width: 170px
                 max-height: 100%
+                min-height: 40px
 
                 border: none
 

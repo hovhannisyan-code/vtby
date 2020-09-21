@@ -2,6 +2,10 @@
     border: 2px solid $facebook
     border-radius: 5px
 
+    margin-bottom: 30px
+
+    font-family: $font--rubik
+
     transition: border $transition--default
 
     &:hover
@@ -48,6 +52,11 @@
         .button--post
             width: 100%
             height: 40px
+
+            font-size: 12px
+
+            @media screen and ($breakpoint--md)
+                font-size: 16px
 
             &:hover
                 .post
