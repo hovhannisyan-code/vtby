@@ -154,7 +154,7 @@
                 </div>
                 <div class="header__buttons">
                     <div class="language-select">
-                        <button class="button--text button--dropdown" id="language-button">РУС</button>
+                        <button class="button--text button--dropdown" data-type="dropdown-button" data-href="#language-list" id="language-button">РУС</button>
                         <div class="language-list" id="language-list" data-type="dropdown">
                             <form action="#" method="POST" id="language-form">
                                 <div class="language-item">
@@ -169,10 +169,10 @@
                             </form>
                         </div>
                     </div>
-                    <button class="button--menu button--dropdown" id="menu-button">
+                    <button class="button--menu button--dropdown" data-type="dropdown-button" data-href="#menu" id="menu-button">
                         <img src="./img/icons/burger-menu.png" alt="Icon">
                     </button>
-                    <button>
+                    <button data-type="dropdown-button" data-href="">
                         <img src="./img/icons/user.png" alt="Icon">
                     </button>
                 </div>
@@ -220,12 +220,12 @@
                 <h2 class="section__heading">Продажа международных автобусных билетов</h2>
                 <form method="POST" action="#" id="ticket-form" class="ticket-form">
                     <div class="items">
-                        <div class="item item--dropdown">
-                            <input type="text" name="from" class="ticket-form__input" placeholder="Откуда" required>
+                        <div class="item item--dropdown" data-href="#country-to">
+                            <input type="text" name="from" id="from" class="ticket-form__input" placeholder="Откуда" autocomplete="off" required>
                             <div class="item__dropdown">
-                                <div class="dropdown__level">
+                                <div class="dropdown__level dropdown__level--country">
                                     <div class="dropdown__header">страна</div>
-                                    <ul class="dropdown__list dropdown__list--primary">
+                                    <ul class="dropdown__list" id="country-from">
                                         <li class="dropdown__item">Беларусь</li>
                                         <li class="dropdown__item">Германия</li>
                                         <li class="dropdown__item">Польша</li>
@@ -234,17 +234,26 @@
                                         <li class="dropdown__item">Чехия</li>
                                     </ul>
                                 </div>
-                                <div class="dropdown__level">
+                                <div class="dropdown__level dropdown__level--city">
                                     <div class="dropdown__header">город</div>
-                                    <ul class="dropdown__list">
-                                        <li class="dropdown__item">Москва</li>
-                                        <li class="dropdown__item">Невель</li>
-                                        <li class="dropdown__item">Остров</li>
-                                        <li class="dropdown__item">Псков</li>
+                                    <ul class="dropdown__list" id="city-from">
                                         <li class="dropdown__item">Санкт-Петербург</li>
-                                        <li class="dropdown__item">Смоленск</li>
+                                        <li class="dropdown__item">Москва</li>
                                         <li class="dropdown__item">Нижний Новгород</li>
                                         <li class="dropdown__item">Самара</li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown__level dropdown__level--search">
+                                    <div class="dropdown__header">город, страна</div>
+                                    <ul class="dropdown__list">
+                                        <li class="dropdown__item">Санкт-Петербург, <span>Россия</span></li>
+                                        <li class="dropdown__item">Бобруйск, <span>Беларусь</span></li>
+                                        <li class="dropdown__item">Брест, <span>Беларусь</span></li>
+                                        <li class="dropdown__item">Минск, <span>Беларусь</span></li>
+                                        <li class="dropdown__item">Москва, <span>Россия</span></li>
+                                        <li class="dropdown__item">Оснабрюк, <span>Германия</span></li>
+                                        <li class="dropdown__item">Нижний Новгород, <span>Россия</span></li>
+                                        <li class="dropdown__item">Самара, <span>Россия</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -253,11 +262,11 @@
                             <img src="./img/icons/replace.png" alt="Icon">
                         </div>
                         <div class="item item--dropdown">
-                            <input type="text" name="to" class="ticket-form__input" placeholder="Куда" required>
+                            <input type="text" name="to" id="to" class="ticket-form__input" placeholder="Куда" autocomplete="off" required>
                             <div class="item__dropdown">
-                                <div class="dropdown__level">
+                                <div class="dropdown__level dropdown__level--country">
                                     <div class="dropdown__header">страна</div>
-                                    <ul class="dropdown__list dropdown__list--primary">
+                                    <ul class="dropdown__list" id="country-to">
                                         <li class="dropdown__item">Беларусь</li>
                                         <li class="dropdown__item">Германия</li>
                                         <li class="dropdown__item">Польша</li>
@@ -266,9 +275,9 @@
                                         <li class="dropdown__item">Чехия</li>
                                     </ul>
                                 </div>
-                                <div class="dropdown__level">
+                                <div class="dropdown__level dropdown__level--city">
                                     <div class="dropdown__header">город</div>
-                                    <ul class="dropdown__list">
+                                    <ul class="dropdown__list" id="city-to">
                                         <li class="dropdown__item">Москва</li>
                                         <li class="dropdown__item">Невель</li>
                                         <li class="dropdown__item">Остров</li>
@@ -279,21 +288,63 @@
                                         <li class="dropdown__item">Самара</li>
                                     </ul>
                                 </div>
+                                <div class="dropdown__level dropdown__level--search">
+                                    <div class="dropdown__header">город, страна</div>
+                                    <ul class="dropdown__list">
+                                        <li class="dropdown__item">Санкт-Петербург, <span>Россия</span></li>
+                                        <li class="dropdown__item">Бобруйск, <span>Беларусь</span></li>
+                                        <li class="dropdown__item">Брест, <span>Беларусь</span></li>
+                                        <li class="dropdown__item">Минск, <span>Беларусь</span></li>
+                                        <li class="dropdown__item">Москва, <span>Россия</span></li>
+                                        <li class="dropdown__item">Оснабрюк, <span>Германия</span></li>
+                                        <li class="dropdown__item">Нижний Новгород, <span>Россия</span></li>
+                                        <li class="dropdown__item">Самара, <span>Россия</span></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <div class="item item--date item--icon">
-                            <input type="text" name="there" class="ticket-form__input" placeholder="Туда" readonly disabled>
+                        <div class="item item--date item--icon item--dropdown">
+                            <input type="text" name="there" class="ticket-form__input" placeholder="Туда" required>
                             <div class="item__icon">
-                                <img src="./img/icons/calendar.png" alt="Icon">
+                                <img src="./img/icons/calendar.png" class="icon--default" alt="Icon">
+                                <img src="./img/icons/close.png" class="icon--close" alt="Icon">
+                            </div>
+                            <div class="item__dropdown">
+                                <div class="dropdown__header">
+                                    <div class="dropdown__text">выберите дату отправления</div>
+                                    <div class="dropdown__buttons">
+                                        <div class="buttons__row">
+                                            <button type="button" class="button button--small active" data-type="calendar-button">Только туда</button>
+                                            <button type="button" class="button button--large" data-type="calendar-button">Только туда с открытой датой</button>
+                                        </div>
+                                        <hr>
+                                        <div class="buttons__row">
+                                            <button type="button" class="button button--small" data-type="calendar-button">Туда + обратно</button>
+                                            <button type="button" class="button button--large" data-type="calendar-button">Туда + обратно с открытой датой</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="item item--date item--icon">
-                            <input type="text" name="back" class="ticket-form__input" placeholder="Обратно" readonly disabled>
+                        <div class="item item--date item--icon item--dropdown">
+                            <input type="text" name="back" class="ticket-form__input" placeholder="Обратно" required>
                             <div class="item__icon">
-                                <img src="./img/icons/calendar.png" alt="Icon">
+                                <img src="./img/icons/calendar.png" class="icon--default" alt="Icon">
+                                <img src="./img/icons/close.png" class="icon--close" alt="Icon">
+                            </div>
+                            <div class="item__dropdown">
+                                <div class="dropdown__header">
+                                    <div class="dropdown__text">выберите дату отправления</div>
+                                    <div class="dropdown__buttons">
+                                        <div class="buttons__row">
+                                            <button type="button" class="button active" data-type="calendar-button">Обратно не нужен</button>
+                                            <button type="button" class="button" data-type="calendar-button">С открытой датой</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="item item--select">
+                        <div class="item item--select item--dropdown">
                             <select name="passengers" id="passengers">
                                 <option value="1">1 пассажир</option>
                                 <option value="2">2 пассажира</option>
@@ -311,6 +362,20 @@
                                 <span class="preview__icon">
                                     <svg><use xlink:href="#icon-dropdown"></use></svg>
                                 </span>
+                            </div>
+                            <div class="item__dropdown">
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__item">1 пассажир</li>
+                                    <li class="dropdown__item">2 пассажира</li>
+                                    <li class="dropdown__item">3 пассажира</li>
+                                    <li class="dropdown__item">4 пассажира</li>
+                                    <li class="dropdown__item">5 пассажиров</li>
+                                    <li class="dropdown__item">6 пассажиров</li>
+                                    <li class="dropdown__item">7 пассажиров</li>
+                                    <li class="dropdown__item">8 пассажиров</li>
+                                    <li class="dropdown__item">9 пассажиров</li>
+                                    <li class="dropdown__item">10 пассажиров</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
