@@ -6,6 +6,13 @@ jQuery(document).ready($ => {
         $('header [data-type="dropdown"]').not(dropdown).removeClass('show');
     };
 
+    const filterCities = (input, items) => {
+        console.log(items);
+        items.each((index, element) => {
+            console.log($(element).text())
+        });
+    }
+
     // On header dropdown button click
     $(document).on('click', '[data-type="dropdown-button"]', function() {
         var $button = $(this);
@@ -27,16 +34,15 @@ jQuery(document).ready($ => {
         var $item = $(this);
         var $dropdown = $item.children('.item__dropdown');
 
-        if(! $(event.target).parent().is('#city-from, #city-to')) {
+        if(! $(event.target).parent().is('#city-from, #city-to')
+            && ! $(event.target).parent().is('#passengers-list')) {
             $item.addClass('active');
-            $dropdown.addClass('active');
         }
 
         // On document click
         $(document).mouseup((event) => {
             // Ticket form dropdown close
             if (! $dropdown.is(event.target) && $dropdown.has(event.target).length === 0) {
-                $dropdown.removeClass('active');
                 $item.removeClass('active');
             }
         });
@@ -50,13 +56,15 @@ jQuery(document).ready($ => {
         if ($input.val().length) {
             $dropdown.children('.dropdown__level').not('.dropdown__level--search').hide();
             $dropdown.children('.dropdown__level--search').show();
+
+            filterCities($input, $input.siblings('.item__dropdown').find('.dropdown__level--search .dropdown__list .dropdown__item'));
         } else {
             $dropdown.children('.dropdown__level--country').show();
             $dropdown.children('.dropdown__level--search').hide();
         }
     });
 
-    // On ticket for date dropdown button click
+    // On date dropdown button click
     $(document).on('click', '[data-type="calendar-button"]', function() {
         var $dropdown = $(this).closest('.item__dropdown');
 
@@ -67,6 +75,9 @@ jQuery(document).ready($ => {
     // On country item click
     $(document).on('click', '#country-from .dropdown__item, #country-to .dropdown__item', function() {
         var $dropdown = $(this).closest('.item__dropdown');
+
+        $(this).siblings('.dropdown__item').removeClass('active');
+        $(this).addClass('active');
 
         $dropdown.find('.dropdown__level--city').show();
     });
@@ -86,10 +97,27 @@ jQuery(document).ready($ => {
 
         $input.val($(this).text());
 
-        $input.siblings('.item__dropdown').removeClass('active');
         $input.parent('.item--dropdown').removeClass('active');
 
-        $next.closest('.item__dropdown').siblings('input').trigger('click');
+        $next.trigger('click');
+    });
+
+    // Ticket form passengers select output
+    $('#passengers option').each((index, element) => {
+        $('#passengers-list').append(`<li class="dropdown__item">${$(element).text()}</li>`);
+    });
+
+    // On passengers select item hover
+    $(document).on('mouseenter', '#passengers-list .dropdown__item', function() {
+        var text = $(this).text();
+        $('#passengers').siblings('.item__preview').children('.preview__selected').attr('placeholder', text);
+    });
+
+    // On passengers select item click
+    $(document).on('click', '#passengers-list .dropdown__item', function() {
+        var text = $(this).text();
+        $(this).closest('.item--dropdown').removeClass('active');
+        $('#passengers').siblings('.item__preview').children('.preview__selected').val(text);
     });
 
 });

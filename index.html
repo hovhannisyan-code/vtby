@@ -9,7 +9,7 @@
     <title>Все билеты в одном месте | Visit-Tour международные пассажирские перевозки</title>
 
     <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@100;300;400;500&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;500;600;800&family=Roboto:wght@100;300;400;500&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
     
@@ -220,7 +220,7 @@
                 <h2 class="section__heading">Продажа международных автобусных билетов</h2>
                 <form method="POST" action="#" id="ticket-form" class="ticket-form">
                     <div class="items">
-                        <div class="item item--dropdown" data-href="#country-to">
+                        <div class="item item--dropdown" data-href="#to">
                             <input type="text" name="from" id="from" class="ticket-form__input" placeholder="Откуда" autocomplete="off" required>
                             <div class="item__dropdown">
                                 <div class="dropdown__level dropdown__level--country">
@@ -304,7 +304,7 @@
                             </div>
                         </div>
                         <div class="item item--date item--icon item--dropdown">
-                            <input type="text" name="there" class="ticket-form__input" placeholder="Туда" required>
+                            <input type="text" name="there" id="there" class="ticket-form__input" placeholder="Туда" required>
                             <div class="item__icon">
                                 <img src="./img/icons/calendar.png" class="icon--default" alt="Icon">
                                 <img src="./img/icons/close.png" class="icon--close" alt="Icon">
@@ -327,7 +327,7 @@
                             </div>
                         </div>
                         <div class="item item--date item--icon item--dropdown">
-                            <input type="text" name="back" class="ticket-form__input" placeholder="Обратно" required>
+                            <input type="text" name="back" id="back" class="ticket-form__input" placeholder="Обратно" required>
                             <div class="item__icon">
                                 <img src="./img/icons/calendar.png" class="icon--default" alt="Icon">
                                 <img src="./img/icons/close.png" class="icon--close" alt="Icon">
@@ -358,24 +358,13 @@
                                 <option value="10">10 пассажиров</option>
                             </select>
                             <div class="item__preview">
-                                <span class="preview__selected">Пассажиров</span>
+                                <input class="preview__selected" id="passengers-input" placeholder="Пассажиров" readonly disabled>
                                 <span class="preview__icon">
                                     <svg><use xlink:href="#icon-dropdown"></use></svg>
                                 </span>
                             </div>
                             <div class="item__dropdown">
-                                <ul class="dropdown__list">
-                                    <li class="dropdown__item">1 пассажир</li>
-                                    <li class="dropdown__item">2 пассажира</li>
-                                    <li class="dropdown__item">3 пассажира</li>
-                                    <li class="dropdown__item">4 пассажира</li>
-                                    <li class="dropdown__item">5 пассажиров</li>
-                                    <li class="dropdown__item">6 пассажиров</li>
-                                    <li class="dropdown__item">7 пассажиров</li>
-                                    <li class="dropdown__item">8 пассажиров</li>
-                                    <li class="dropdown__item">9 пассажиров</li>
-                                    <li class="dropdown__item">10 пассажиров</li>
-                                </ul>
+                                <ul class="dropdown__list" id="passengers-list"></ul>
                             </div>
                         </div>
                     </div>
@@ -387,8 +376,8 @@
             <div class="container">
                 <h2 class="section__heading">Новости и спецпредложения</h2>
                 <div class="section__inner">
-                    <div class="row">
-                        <div class="col-4">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="post">
                                 <div class="post__thumbnail">
                                     <img src="./img/posts/1.jpg" alt="Bus">
@@ -400,7 +389,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="post">
                                 <div class="post__thumbnail">
                                     <img src="./img/posts/2.jpg" alt="Bus">
@@ -412,7 +401,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-md-6 col-lg-4">
                             <div class="post">
                                 <div class="post__thumbnail">
                                     <img src="./img/posts/3.jpg" alt="Bus">
@@ -433,7 +422,7 @@
                 <h2 class="section__heading">Популярные маршруты</h2>
                 <div class="section__inner">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-12 col-sm-6 col-lg-4">
                             <div class="route">
                                 <div class="route__header">
                                     <div class="route__country-flag">
@@ -459,7 +448,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-sm-6 col-lg-4">
                             <div class="route">
                                 <div class="route__header">
                                     <div class="route__country-flag">
@@ -481,7 +470,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-sm-6 col-lg-4">
                             <div class="route">
                                 <div class="route__header">
                                     <div class="route__country-flag">
@@ -507,7 +496,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-sm-6 col-lg-4">
                             <div class="route">
                                 <div class="route__header">
                                     <div class="route__country-flag">
@@ -529,7 +518,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-sm-6 col-lg-4">
                             <div class="route">
                                 <div class="route__header">
                                     <div class="route__country-flag">
@@ -551,7 +540,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-sm-6 col-lg-4">
                             <div class="route">
                                 <div class="route__header">
                                     <div class="route__country-flag">
@@ -623,8 +612,8 @@
         </section>
         <footer class="footer">
             <div class="container">
-                <div class="row row--contact justify-content-between">
-                    <div class="col-4">
+                <div class="row row--contact">
+                    <div class="col-12 col-md-6 col-xl-4">
                         <div class="footer__contact">
                             <div class="contact__title">Справочная служба:&nbsp;</div>
                             <div class="contact__inner">
@@ -650,7 +639,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-md-9 col-lg-6">
                         <div class="footer__subscribe">
                             <span class="subscribe__title">Узнавайте первыми о скидках и акциях</span>
                             <form action="#" method="POST" class="subscribe__form">

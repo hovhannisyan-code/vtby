@@ -1,6 +1,7 @@
 body
-    font-family: Rubik, sans-serif
+    font-family: $font--open-sans, sans-serif
     font-size: 16px
+    font-weight: normal
 
     color: $blue-dark
 
@@ -16,6 +17,8 @@ input.input
 
     outline-width: 2px
     outline-color: $facebook
+
+    font-family: $font--open-sans
     
     background: #fff
 
@@ -28,7 +31,10 @@ button:focus
     outline: none
 
 .section
-    padding: 90px 0
+    padding: 50px 0
+
+    @media screena and ($breakpoint--sm)
+        padding: 90px 0
 
     &--underline
         border-bottom: 1px solid $gray-pink
@@ -36,7 +42,10 @@ button:focus
     &__heading
         width: fit-content
 
+        font-family: $font--rubik
+        font-weight: 500
         font-size: 24px
+        text-align: center
         text-transform: uppercase
         
         margin: 0 auto 50px auto
