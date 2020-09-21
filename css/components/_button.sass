@@ -11,9 +11,10 @@
     padding: 0 20px
 
     border-radius: 3px
+    border: none
 
     &:not(&--outline)
-        +button('solid', $yellow-light, $yellow, $yellow-dark)
+        +button('solid', $yellow-light, $yellow, $yellow-dark, true)
 
     svg
         width: 20px
@@ -22,7 +23,7 @@
         margin-right: 10px
 
     &--outline
-        +button('outline', $facebook, $facebook, darken($facebook, 10%))
+        +button('outline', $facebook, $facebook, darken($facebook, 10%), false)
     
     &--link
         &:hover
