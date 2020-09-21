@@ -46,17 +46,23 @@
 
                 border-right: 2px solid $gray-pink
 
+                &.active
+                    border: 2px solid $yellow-light
+                    border-radius: 3px
+
                 &--dropdown
                     .item__dropdown
                         display: none
 
                         flex-direction: row
 
+                        height: calc((36px * 6) + 22px)
+
+                        box-shadow: 0px 0px 5px 5px rgba(#000, .1)
+
                         position: absolute
                         top: 100%
                         left: 0
-
-                        height: 240px
 
                         &.active
                             display: flex
@@ -73,10 +79,6 @@
                                 background-color: #e8e8e8
 
                             .dropdown__list
-                                display: flex
-                                flex-direction: column
-                                justify-content: space-between
-
                                 height: calc(100% - 22px)
                                 width: max-content
 
@@ -118,12 +120,8 @@
                     justify-content: center
                     align-items: center
 
-                    width: 20px
-                    height: 20px
-
-                    img
-                        width: 100%
-                        height: 100%
+                    .icon--close
+                        display: none
 
                 &:last-child
                     border-right: none
@@ -134,19 +132,30 @@
 
                     width: 100%
 
-                    outline-width: 2px
-                    outline-color: $yellow-light
+                    outline: none
 
                     border: none
 
                     background: none
 
                 &--icon
+                    &.active
+                        .item__icon
+                            .icon--default
+                                display: none
+
+                            .icon--close
+                                display: block
+
                     .ticket-form__input
-                        padding-right: 20px
+                        padding-right: 45px
 
                 &--select
                     padding: 20px
+
+                    &.active
+                        .preview__icon
+                            transform: rotate(180deg)
                     
                     select
                         display: none
@@ -165,9 +174,127 @@
                             color: $gray
 
                         .preview__icon
+                            color: $facebook
+
+                            transition: transform $transition--default
+
                             svg
                                 width: 15px
                                 height: 10px
+                    
+                    .item__dropdown
+                        width: 100%
+
+                        .dropdown__list
+                            list-style: none
+
+                            margin: 0
+                            padding: 0
+
+                            width: 100%
+                            height: calc(36px * 7)
+
+                            overflow-y: auto
+
+                            background: #fff
+
+                            border-radius: 0 0 3px 3px
+
+                            .dropdown__item
+                                cursor: pointer
+
+                                color: $gray
+
+                                line-height: 1
+
+                                padding: 10px 20px
+
+                                transition: background-color $transition--default, color $transition--default
+
+                                &:hover
+                                    color: $blue-dark
+                                    background-color: $blue-light
+
+
+                                &:active
+                                    background-color: darken($blue-light, 10%)
+                
+                &--date
+                    .item__dropdown
+                        background-color: #fff
+
+                        height: auto
+                        min-width: 660px
+
+                        left: -140px
+
+                        .dropdown__header
+                            display: flex
+                            flex-direction: row
+
+                            width: 100%
+
+                            padding: 10px
+
+                            border-bottom: 1px solid #dcdcdc
+
+                            .dropdown__text
+                                font-size: 12px
+
+                                margin-left: 25px
+
+                                color: $gray
+
+                            .dropdown__buttons
+                                margin-left: auto
+
+                                hr
+                                    background-color: #dcdcdc
+
+                                    margin: 5px 0
+
+                                .buttons__row
+                                    display: flex
+                                    flex-direction: row
+                                    justify-content: space-between
+
+                                    padding: 0 15px
+
+                                button
+                                    border: 1px solid $yellow-light
+                                    border-radius: 3px
+
+                                    width: max-content
+                                    height: 25px
+
+                                    font-size: 12px
+                                    text-transform: uppercase
+                                    line-height: 1
+
+                                    padding: 0 10px
+
+                                    margin-right: 15px
+
+                                    background: none
+
+                                    transition: background $transition--default
+
+                                    &.active
+                                        background-color: $yellow-light
+
+                                        border-bottom: 1px solid $yellow
+
+                                    &.button--small
+                                        width: 130px
+
+                                    &.button--large
+                                        width: 260px
+
+                                    &:hover
+                                        background-color: $yellow
+
+                                    &:last-child
+                                        margin-right: 0
 
             .replace-icon
                 display: flex

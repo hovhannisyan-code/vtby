@@ -39,4 +39,27 @@ jQuery(document).ready($ => {
         });
     });
 
+    // Ticket form select dropdown open
+    $('.item--dropdown').click(function() {
+        $(this).addClass('active');
+        $(this).children('.item__dropdown').addClass('active');
+        
+        // On document click
+        $(document).mouseup((event) => {
+            let $dropdown = $('.item__dropdown');
+            
+            // Ticket form dropdown close
+            if (! $dropdown.is(event.target)
+                && $dropdown.has(event.target).length === 0) {
+                    $dropdown.removeClass('active');
+                    $(this).removeClass('active');
+            }
+        });
+    });
+
+    $('[data-type="calendar-button"]').click(function() {
+        $('[data-type="calendar-button"]').removeClass('active');
+        $(this).addClass('active');
+    });
+
 });
