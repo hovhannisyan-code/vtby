@@ -916,7 +916,7 @@ button:focus {
   background-color: #fff;
 }
 
-.section.section--ticket-search .ticket-form .items .item--dropdown .item__dropdown .dropdown__level--search .dropdown__list .dropdown__item span {
+.section.section--ticket-search .ticket-form .items .item--dropdown .item__dropdown .dropdown__level--search .dropdown__list .dropdown__item span.country {
   color: #747577;
 }
 

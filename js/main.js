@@ -6,10 +6,22 @@ jQuery(document).ready($ => {
         $('header [data-type="dropdown"]').not(dropdown).removeClass('show');
     };
 
-    const filterCities = (input, items) => {
-        console.log(items);
+    // Filter ticket form cities dropdown by input value
+    const filterCities = ($input, items) => {
         items.each((index, element) => {
-            console.log($(element).text())
+            let inputValue = $input.val().trim().toLowerCase(),
+                elementValue = $(element).attr('data-value').trim().toLowerCase();
+
+            $(element).show();
+
+            if (elementValue.indexOf(inputValue) < 0) {
+                $(element).hide();
+            } else {
+                elementValue = elementValue.replace(/\s/g, '');
+                elementValue = elementValue.replace(inputValue, '<b>' + inputValue + '</b>');
+
+                $(element).children('span.city').html(elementValue);
+            }
         });
     }
 
@@ -33,9 +45,8 @@ jQuery(document).ready($ => {
     $(document).on('click', '.item--dropdown', function(event) {
         var $item = $(this);
         var $dropdown = $item.children('.item__dropdown');
-
-        if(! $(event.target).parent().is('#city-from, #city-to')
-            && ! $(event.target).parent().is('#passengers-list')) {
+        
+        if(! $(event.target).closest('.dropdown__list').is('#city-from, #city-to, #city-from-search, #city-to-search, #passengers-list')) {
             $item.addClass('active');
         }
 
@@ -90,12 +101,15 @@ jQuery(document).ready($ => {
     });
 
     // On city item click
-    $(document).on('click', '#city-from .dropdown__item, #city-to .dropdown__item', function() {
+    $(document).on('click', '#city-from .dropdown__item, #city-to .dropdown__item, #city-from-search .dropdown__item, #city-to-search .dropdown__item', function() {
         var $item = $(this).closest('.item--dropdown');
         var $input = $(this).closest('.item__dropdown').siblings('.ticket-form__input');
         var $next = $(`${$item.attr('data-href')}`);
 
-        $input.val($(this).text());
+        if ($(this).parent().is('#city-from-search, #city-to-search'))
+            $input.val($(this).attr('data-value'));
+        else
+            $input.val($(this).text());
 
         $input.parent('.item--dropdown').removeClass('active');
 
@@ -104,20 +118,23 @@ jQuery(document).ready($ => {
 
     // Ticket form passengers select output
     $('#passengers option').each((index, element) => {
-        $('#passengers-list').append(`<li class="dropdown__item">${$(element).text()}</li>`);
+        $('#passengers-list').append(`<li class="dropdown__item" data-value="${$(element).val()}">${$(element).text()}</li>`);
     });
 
     // On passengers select item hover
     $(document).on('mouseenter', '#passengers-list .dropdown__item', function() {
         var text = $(this).text();
+
         $('#passengers').siblings('.item__preview').children('.preview__selected').attr('placeholder', text);
     });
 
     // On passengers select item click
     $(document).on('click', '#passengers-list .dropdown__item', function() {
         var text = $(this).text();
+
         $(this).closest('.item--dropdown').removeClass('active');
         $('#passengers').siblings('.item__preview').children('.preview__selected').val(text);
+        $('#passengers').val($(this).attr('data-value'));
     });
 
 });
