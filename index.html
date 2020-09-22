@@ -144,6 +144,35 @@
             <symbol id="icon-dropdown" viewBox="0 0 386.257 386.257" style="enable-background:new 0 0 386.257 386.257;">
                 <polygon points="0,96.879 193.129,289.379 386.257,96.879" fill="currentColor"/>
             </symbol>
+            <symbol id="icon-mailru" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;">
+                <path d="M371.496,485.52C327.36,505.384,289.104,512,236.872,512C114.76,512,7.352,424.456,7.352,280.28
+                    C7.352,130.208,116.224,0,282.488,0c129.472,0,222.16,89.016,222.16,212.6c0,107.4-60.32,175.08-139.768,175.08
+                    c-34.576,0-59.584-17.656-63.264-56.648h-1.472c-22.8,37.52-55.904,56.648-94.896,56.648c-47.816,0-82.392-35.312-82.392-95.64
+                    c0-89.744,66.208-171.4,172.136-171.4c32.368,0,69.144,8.096,87.544,18.392l-22.064,136.096
+                    c-7.352,43.392-2.208,63.264,18.392,63.992c31.632,0.736,71.352-39.728,71.352-124.32c0-95.632-61.792-169.936-175.824-169.936
+                    c-112.544,0-211.128,88.28-211.128,228.784c0,122.848,78.712,192.736,188.328,192.736c37.52,0,77.248-8.088,106.664-23.544
+                    L371.496,485.52z M306.024,181.704c-5.888-1.472-13.248-2.944-22.808-2.944c-48.544,0-86.808,47.816-86.808,104.456
+                    c0,27.952,12.512,45.608,36.784,45.608c27.216,0,55.912-34.576,62.528-77.24L306.024,181.704z" fill="currentColor"/>
+            </symbol>
+            <symbol id="icon-google" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" >
+                <g>
+                    <g id="glass">
+                        <path d="M286.875,229.5v63.75h150.45c-15.3,89.25-86.7,153-175.95,153c-104.55,0-191.25-86.7-191.25-191.25
+                            s86.7-191.25,191.25-191.25c53.55,0,99.45,22.95,132.6,58.65l45.9-45.9c-45.9-45.9-107.1-76.5-178.5-76.5
+                            c-140.25,0-255,114.75-255,255s114.75,255,255,255s242.25-114.75,242.25-255v-25.5H286.875z" fill="currentColor"/>
+                    </g>
+                </g>
+            </symbol>
+            <symbol id="icon-yandex" viewBox="0 0 320 320" style="enable-background:new 0 0 320 320;">
+                <g>
+                    <path d="M227.184,0h-45.466c-46.063,0-92.541,34.014-92.541,110.004c0,39.361,16.683,70.017,47.263,87.451
+                        L80.468,298.762c-2.653,4.791-2.722,10.221-0.185,14.525C82.76,317.49,87.288,320,92.395,320h28.311
+                        c6.432,0,11.448-3.109,13.852-8.555L187.037,208.8h3.83v98.407c0,6.935,5.852,12.793,12.778,12.793h24.735
+                        c7.767,0,13.191-5.424,13.191-13.19V14.002C241.572,5.758,235.656,0,227.184,0z M190.868,163.204h-6.756
+                        c-26.197,0-41.837-21.384-41.837-57.202c0-44.537,19.757-60.405,38.247-60.405h10.346V163.204z" fill="currentColor"/>
+                </g>
+            </symbol>
+
         </svg>
     </div>
     <div class="wrapper">
@@ -172,7 +201,7 @@
                     <button class="button--menu button--dropdown" data-type="dropdown-button" data-href="#menu" id="menu-button">
                         <img src="./img/icons/burger-menu.png" alt="Icon">
                     </button>
-                    <button data-type="dropdown-button" data-href="">
+                    <button data-type="dropdown-button" data-toggle="modal" data-target="#signin">
                         <img src="./img/icons/user.png" alt="Icon">
                     </button>
                 </div>
@@ -690,6 +719,91 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Modals -->
+        <div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="personal-area-tab" data-toggle="tab" href="#personal-area" role="tab" aria-controls="personal-area" aria-selected="true">Личный кабинет</a>
+                                <a class="nav-item nav-link" id="ticket-area-tab" data-toggle="tab" href="#ticket-area" role="tab" aria-controls="ticket-area" aria-selected="false">Кабинет билета</a>
+                            </div>
+                        </nav>
+                        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button> -->
+                    </div>
+                    <div class="modal-body">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="personal-area" role="tabpanel" aria-labelledby="personal-area-tab">
+                                <form id="personal-area-form" action="#" method="POST">
+                                    <div class="form-group">
+                                        <label for="personal-login" class="invalid">Логин<span>*</span></label>
+                                        <input type="text" name="login" class="form-control input invalid" id="personal-login" placeholder="Ваш логин" required>
+                                    </div>
+                                    <div class="form-group form-group--password">
+                                        <label for="personal-password">Пароль<span>*</span></label>
+                                        <input type="password" name="password" class="form-control" id="personal-password" placeholder="Ваш пароль" required>
+                                        <div class="password-hide hide">
+                                            <img src="./img/icons/eye-disable.png" class="icon--disable" alt="Icon">
+                                            <img src="./img/icons/eye.png" class="icon--visible" alt="Icon">
+                                        </div>
+                                    </div>
+                                    <div class="form-links">
+                                        <a href="#">Регистрация</a>
+                                        <a href="#">Забыли пароль?</a>
+                                    </div>
+                                    <div class="form-social-regs">
+                                        <a href="#" title="VK">
+                                            <svg><use xlink:href="#icon-vk"></use></svg>
+                                        </a>
+                                        <a href="#" title="Facebook">
+                                            <svg><use xlink:href="#icon-facebook"></use></svg>
+                                        </a>
+                                        <a href="#" title="OK">
+                                            <svg><use xlink:href="#icon-ok"></use></svg>
+                                        </a>
+                                        <a href="#" title="Twitter">
+                                            <svg><use xlink:href="#icon-twitter"></use></svg>
+                                        </a>
+                                        <a href="#" title="Mail.ru">
+                                            <svg><use xlink:href="#icon-mailru"></use></svg>
+                                        </a>
+                                        <a href="#" title="Google">
+                                            <svg><use xlink:href="#icon-google"></use></svg>
+                                        </a>
+                                        <a href="#" title="Yandex">
+                                            <svg><use xlink:href="#icon-yandex"></use></svg>
+                                        </a>
+                                    </div>
+                                    <p class="form-policy">Авторизуюясь, вы соглашаетесь с <a href="#">правилами сервиса</a> и <a href="#">условиями обработки персональных данных</a></p>
+                                    <button type="submit" class="button">Войти</button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="ticket-area" role="tabpanel" aria-labelledby="ticket-area-tab">
+                                <form id="ticket-area-form" action="#" method="POST">
+                                    <div class="form-group">
+                                        <label for="personal-login">Номер<span>*</span></label>
+                                        <input type="text" name="number" class="form-control input" id="personal-login" placeholder="Номер билета" required>
+                                    </div>
+                                    <div class="form-group form-group--password">
+                                        <label for="personal-login">Код<span>*</span></label>
+                                        <input type="password" name="code" class="form-control input" id="personal-login" placeholder="Защитный код" required>
+                                        <div class="password-hide hide">
+                                            <img src="./img/icons/eye-disable.png" class="icon--disable" alt="Icon">
+                                            <img src="./img/icons/eye.png" class="icon--visible" alt="Icon">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="button">Войти</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

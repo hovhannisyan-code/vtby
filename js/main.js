@@ -32,6 +32,9 @@ jQuery(document).ready($ => {
         
         resetHeader($button, $dropdown);
 
+        if ($(this).attr('data-toggle') == 'modal')
+            return;
+
         $button.toggleClass('active');
         $dropdown.toggleClass('show');
     });
@@ -144,6 +147,18 @@ jQuery(document).ready($ => {
         $(this).closest('.item--dropdown').removeClass('active');
         $('#passengers').siblings('.item__preview').children('.preview__selected').val(text);
         $('#passengers').val($(this).attr('data-value'));
+    });
+
+    // On password hide click
+    $(document).on('click', '.password-hide', function() {
+        $input = $(this).siblings('input');
+        
+        $(this).toggleClass('hide show');
+
+        if ($input.attr('type') == 'text')
+            $input.attr('type', 'password')
+        else
+            $input.attr('type', 'text');
     });
 
 });
