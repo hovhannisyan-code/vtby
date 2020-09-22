@@ -66,14 +66,22 @@ button:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-size: 14px;
   font-family: Open Sans;
   font-weight: 600;
   text-transform: uppercase;
-  width: 180px;
-  height: 50px;
+  min-width: 180px;
+  height: 40px;
   padding: 0 20px;
   border-radius: 3px;
   border: none;
+}
+
+@media screen and (min-width: 578px) {
+  .button {
+    font-size: 16px;
+    height: 50px;
+  }
 }
 
 .button:not(.button--outline) {
@@ -318,7 +326,58 @@ button:focus {
 }
 
 .modal .modal-dialog {
-  max-width: 380px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+}
+
+@media screen and (min-width: 578px) {
+  .modal .modal-dialog {
+    max-width: 380px;
+  }
+}
+
+.modal .modal-dialog .close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  border: 1px solid #f3d93b;
+  border-radius: 50%;
+  opacity: 1;
+  width: 25px;
+  height: 25px;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 1;
+  background-color: #f3f3f3;
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+@media screen and (min-width: 578px) {
+  .modal .modal-dialog .close {
+    top: 0;
+    right: 0;
+    -webkit-transform: translate(calc(50% + 10px), 50%);
+            transform: translate(calc(50% + 10px), 50%);
+  }
+}
+
+.modal .modal-dialog .close:hover {
+  opacity: 1;
+  background-color: #f3d93b;
 }
 
 .modal .modal-dialog .modal-header {
@@ -342,7 +401,9 @@ button:focus {
 }
 
 .modal .modal-dialog .modal-header nav .nav-tabs .nav-item {
-  width: 50%;
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
   height: 100%;
   padding: 15px;
   font-size: 14px;
@@ -364,34 +425,40 @@ button:focus {
 }
 
 .modal .modal-dialog .modal-body {
-  padding: 20px 40px 40px 40px;
+  padding: 15px 20px 30px 20px;
   background-color: #f3f3f3;
 }
 
-.modal .modal-dialog .modal-body form a {
+@media screen and (min-width: 578px) {
+  .modal .modal-dialog .modal-body {
+    padding: 20px 35px 40px 35px;
+  }
+}
+
+form.form--custom a {
   color: inherit;
 }
 
-.modal .modal-dialog .modal-body form a:hover {
+form.form--custom a:hover {
   color: #4857a9;
   text-decoration: underline;
   -webkit-text-decoration-color: #4857a9;
           text-decoration-color: #4857a9;
 }
 
-.modal .modal-dialog .modal-body form .form-group {
+form.form--custom .form-group {
   margin-bottom: 10px;
 }
 
-.modal .modal-dialog .modal-body form .form-group--password {
+form.form--custom .form-group--password {
   position: relative;
 }
 
-.modal .modal-dialog .modal-body form .form-group--password .form-control {
+form.form--custom .form-group--password .form-control {
   padding-right: 40px;
 }
 
-.modal .modal-dialog .modal-body form .form-group--password .password-hide {
+form.form--custom .form-group--password .password-hide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -404,44 +471,70 @@ button:focus {
   position: absolute;
   bottom: 0;
   right: 15px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
   cursor: pointer;
   width: 25px;
 }
 
-.modal .modal-dialog .modal-body form .form-group--password .password-hide.hide .icon--visible {
+@media screen and (min-width: 578px) {
+  form.form--custom .form-group--password .password-hide {
+    -webkit-transform: translateY(-12.5px);
+            transform: translateY(-12.5px);
+  }
+}
+
+form.form--custom .form-group--password .password-hide.hide .icon--visible {
   display: none;
 }
 
-.modal .modal-dialog .modal-body form .form-group--password .password-hide.show .icon--disable {
+form.form--custom .form-group--password .password-hide.show .icon--disable {
   display: none;
 }
 
-.modal .modal-dialog .modal-body form .form-group--password .password-hide img {
+form.form--custom .form-group--password .password-hide img {
   width: 100%;
   height: 100%;
 }
 
-.modal .modal-dialog .modal-body form .form-group label {
+form.form--custom .form-group .form-text {
+  font-family: Rubik;
+  font-size: 12px;
+}
+
+form.form--custom .form-group label {
   font-family: Rubik;
   font-size: 12px;
   margin-bottom: 5px;
 }
 
-.modal .modal-dialog .modal-body form .form-group label.invalid span {
+form.form--custom .form-group label.invalid span {
   color: #d24a43;
 }
 
-.modal .modal-dialog .modal-body form .form-group .form-control {
-  height: 50px;
+form.form--custom .form-group .form-control {
+  padding: 10px 15px;
+  height: 35px;
+  font-size: 14px;
 }
 
-.modal .modal-dialog .modal-body form .form-group .form-control.invalid {
+@media screen and (min-width: 578px) {
+  form.form--custom .form-group .form-control {
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+form.form--custom .form-group .form-control.invalid {
   border: 2px solid #d24a43;
 }
 
-.modal .modal-dialog .modal-body form .form-links {
+form.form--custom .custom-control .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #4857a9;
+  border-color: #4857a9;
+}
+
+form.form--custom .form-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -456,7 +549,7 @@ button:focus {
   font-size: 12px;
 }
 
-.modal .modal-dialog .modal-body form .form-social-regs {
+form.form--custom .form-social-regs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -473,7 +566,7 @@ button:focus {
   margin-top: 25px;
 }
 
-.modal .modal-dialog .modal-body form .form-social-regs a {
+form.form--custom .form-social-regs a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -492,30 +585,32 @@ button:focus {
   transition: background-color 0.25s, color 0.25s;
 }
 
-.modal .modal-dialog .modal-body form .form-social-regs a:hover {
+form.form--custom .form-social-regs a:hover {
   color: #fff;
   background-color: #4857a9;
 }
 
-.modal .modal-dialog .modal-body form .form-social-regs a svg {
+form.form--custom .form-social-regs a svg {
   width: 17px;
   height: 17px;
 }
 
-.modal .modal-dialog .modal-body form .form-policy {
+form.form--custom .form-policy,
+form.form--custom .form-agreement {
   font-family: Rubik;
   font-size: 11px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
-.modal .modal-dialog .modal-body form .form-policy a {
+form.form--custom .form-policy a,
+form.form--custom .form-agreement a {
   color: #4857a9;
   text-decoration: underline;
   -webkit-text-decoration-color: #4857a9;
           text-decoration-color: #4857a9;
 }
 
-.modal .modal-dialog .modal-body form button[type="submit"] {
+form.form--custom button[type="submit"] {
   margin: 25px auto 0 auto;
 }
 

@@ -1,6 +1,52 @@
 .modal
     .modal-dialog
-        max-width: 380px
+        position: relative
+
+        margin-left: auto
+        margin-right: auto
+
+        max-width: 300px
+
+        @media screen and ($breakpoint--sm)
+            max-width: 380px
+
+        .close
+            display: flex
+            justify-content: center
+            align-items: center
+
+            position: absolute
+            top: 0
+            right: 0
+
+            transform: translate(0)
+
+            border: 1px solid $yellow-light
+            border-radius: 50%
+
+            opacity: 1
+
+            width: 25px
+            height: 25px
+
+            font-weight: normal
+            font-size: 32px
+            line-height: 1
+
+            background-color: $white-dark
+
+            transition: background-color $transition--default
+
+            @media screen and ($breakpoint--sm)
+                top: 0
+                right: 0
+
+                transform: translate(calc(50% + 10px), 50%)
+
+            &:hover
+                opacity: 1
+
+                background-color: $yellow-light
 
         .modal-header
             padding: 0
@@ -17,7 +63,7 @@
                     border: none
 
                     .nav-item
-                        width: 50%
+                        flex: 50%
                         height: 100%
 
                         padding: 15px
@@ -41,123 +87,12 @@
                             border-bottom: 2px solid $facebook
 
         .modal-body
-            padding: 20px 40px 40px 40px
+            padding: 15px 20px 30px 20px
 
             background-color: $white-dark
 
-            form
-                a
-                    color: inherit
-
-                    &:hover
-                        color: $facebook
-                        text-decoration: underline
-                        text-decoration-color: $facebook
-
-                .form-group
-                    margin-bottom: 10px
-
-                    &--password
-                        position: relative
-
-                        .form-control
-                            padding-right: 40px
-
-                        .password-hide
-                            display: flex
-                            justify-content: center
-                            align-items: center
-
-                            position: absolute
-                            bottom: 0
-                            right: 15px
-
-                            transform: translateY(-50%)
-
-                            cursor: pointer
-
-                            width: 25px
-
-                            &.hide
-                                .icon--visible
-                                    display: none
-
-                            &.show
-                                .icon--disable
-                                    display: none
-
-                            img
-                                width: 100%
-                                height: 100%
-
-                    label
-                        font-family: $font--rubik
-                        font-size: 12px
-
-                        margin-bottom: 5px
-
-                        &.invalid
-                            span
-                                color: $red
-                    
-                    .form-control
-                        height: 50px
-
-                        &.invalid
-                            border: 2px solid $red
-                
-                .form-links
-                    display: flex
-                    flex-direction: row
-                    justify-content: space-between
-
-                    font-family: $font--rubik
-                    font-size: 12px
-
-                .form-social-regs
-                    display: flex
-                    flex-direction: row
-                    justify-content: space-between
-                    align-items: center
-
-                    margin-top: 25px
-
-                    a
-                        display: flex
-                        justify-content: center
-                        align-items: center
-
-                        width: 28px
-                        height: 28px
-
-                        border: 1px solid $facebook
-                        border-radius: 3px
-
-                        color: $facebook
-
-                        transition: background-color $transition--default, color $transition--default
-
-                        &:hover
-                            color: #fff
-                            background-color: $facebook
-
-                        svg
-                            width: 17px
-                            height: 17px
-                
-                .form-policy
-                    font-family: $font--rubik
-                    font-size: 11px
-
-                    margin-top: 10px
-
-                    a
-                        color: $facebook
-                        text-decoration: underline
-                        text-decoration-color: $facebook
-                
-                button[type="submit"]
-                    margin: 25px auto 0 auto
+            @media screen and ($breakpoint--sm)
+                padding: 20px 35px 40px 35px
 
 
 

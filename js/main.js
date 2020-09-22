@@ -161,4 +161,12 @@ jQuery(document).ready($ => {
             $input.attr('type', 'text');
     });
 
+    // On modal button click
+    $(document).on('click', '[data-type="modal-open"]', function() {
+        $('.modal').modal('hide');
+
+        console.log($(`${$(this).attr('data-href')}`));
+        $(`${$(this).attr('data-href')}`).modal('show');
+    });
+
 });
