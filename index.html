@@ -176,6 +176,7 @@
         </svg>
     </div>
     <div class="wrapper">
+
         <header class="header">
             <div class="header__wrapper">
                 <div class="header__logo">
@@ -731,29 +732,29 @@
                                 <a class="nav-item nav-link" id="ticket-area-tab" data-toggle="tab" href="#ticket-area" role="tab" aria-controls="ticket-area" aria-selected="false">Кабинет билета</a>
                             </div>
                         </nav>
-                        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button> -->
+                        </button>
                     </div>
                     <div class="modal-body">
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="personal-area" role="tabpanel" aria-labelledby="personal-area-tab">
-                                <form id="personal-area-form" action="#" method="POST">
+                                <form id="personal-area-form" class="form--custom" action="#" method="POST">
                                     <div class="form-group">
                                         <label for="personal-login" class="invalid">Логин<span>*</span></label>
-                                        <input type="text" name="login" class="form-control input invalid" id="personal-login" placeholder="Ваш логин" required>
+                                        <input type="text" name="signin_login" class="form-control input invalid" id="personal-login" placeholder="Ваш логин" required>
                                     </div>
                                     <div class="form-group form-group--password">
                                         <label for="personal-password">Пароль<span>*</span></label>
-                                        <input type="password" name="password" class="form-control" id="personal-password" placeholder="Ваш пароль" required>
+                                        <input type="password" name="signin_password" class="form-control" id="personal-password" placeholder="Ваш пароль" required>
                                         <div class="password-hide hide">
                                             <img src="./img/icons/eye-disable.png" class="icon--disable" alt="Icon">
                                             <img src="./img/icons/eye.png" class="icon--visible" alt="Icon">
                                         </div>
                                     </div>
                                     <div class="form-links">
-                                        <a href="#">Регистрация</a>
-                                        <a href="#">Забыли пароль?</a>
+                                        <a href="#" data-type="modal-open" data-href="#signup">Регистрация</a>
+                                        <a href="#" data-type="modal-open" data-href="#forgot">Забыли пароль?</a>
                                     </div>
                                     <div class="form-social-regs">
                                         <a href="#" title="VK">
@@ -783,7 +784,7 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="ticket-area" role="tabpanel" aria-labelledby="ticket-area-tab">
-                                <form id="ticket-area-form" action="#" method="POST">
+                                <form id="ticket-area-form" class="form--custom" action="#" method="POST">
                                     <div class="form-group">
                                         <label for="personal-login">Номер<span>*</span></label>
                                         <input type="text" name="number" class="form-control input" id="personal-login" placeholder="Номер билета" required>
@@ -804,6 +805,110 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="signup-tab" data-toggle="tab" href="#signup-area" role="tab" aria-controls="personal-area" aria-selected="true">Регистрация пользователя</a>
+                            </div>
+                        </nav>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="signup-area" role="tabpanel" aria-labelledby="signup-tab">
+                                <form id="signup-form" class="form--custom" action="#" method="POST">
+                                    <div class="form-group">
+                                        <label for="signup-name">Имя<span>*</span></label>
+                                        <input type="text" name="signup_name" class="form-control input" id="signup-name" placeholder="Ваше имя" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="signup-login">Логин<span>*</span></label>
+                                        <input type="text" name="signup_login" class="form-control input" id="signup-login" placeholder="Ваш логин" required>
+                                    </div>
+                                    <div class="form-group form-group--password">
+                                        <label for="signup-password">Пароль<span>*</span></label>
+                                        <input type="password" name="signup_password" class="form-control" id="signup-password" placeholder="Ваш пароль" required>
+                                        <div class="password-hide hide">
+                                            <img src="./img/icons/eye-disable.png" class="icon--disable" alt="Icon">
+                                            <img src="./img/icons/eye.png" class="icon--visible" alt="Icon">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="signup-email">E-mail<span>*</span></label>
+                                        <input type="email" name="signup_email" class="form-control input" id="signup-email" placeholder="Ваш e-mail" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="signup-phone">Телефон<span>*</span></label>
+                                        <input type="tel" name="signup_phone" class="form-control input" id="signup-phone" placeholder="+375XXXXXXXXX" required>
+                                    </div>
+                                    <div class="form-agreement custom-control custom-switch">
+                                        <input type="checkbox" name="signup_agreement" class="custom-control-input" id="signup-agreement">
+                                        <label class="custom-control-label" for="signup-agreement">Я согласен с <a href="#">политикой конфиденциальности</a> и <a href="">условиями обработки персональных данных</a></label>
+                                      </div>
+                                    <button type="submit" class="button">Зарегистрироваться</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="forgot" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="forgot-tab" data-toggle="tab" href="#forgot-area" role="tab" aria-controls="personal-area" aria-selected="true">Забыли пароль?</a>
+                            </div>
+                        </nav>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="forgot-area" role="tabpanel" aria-labelledby="forgot-tab">
+                                <form id="forgot-form" class="form--custom" action="#" method="POST">
+                                    <div class="form-group">
+                                        <label for="forgot-email">E-mail<span>*</span></label>
+                                        <input type="email" name="forgot_email" class="form-control input" id="forgot-email" placeholder="E-mail для востановления пароля" required>
+                                        <span class="form-text">Пароль будет выслан на указанный E-mail</span>
+                                    </div>
+                                    <button type="submit" class="button">Востановить</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="signup-success" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p class="text-center mb-4">Поздравляем!<br>Вы успешно прошли регистрацию.</p>
+                        <button type="button" class="button mx-auto" data-dismiss="modal" aria-label="Close">Ок</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="forgot-send" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p class="text-center mb-4">Пароль отправлен на указанный E-mail</p>
+                        <button type="button" class="button mx-auto" data-dismiss="modal" aria-label="Close">Ок</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>

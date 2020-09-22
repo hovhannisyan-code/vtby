@@ -1,0 +1,135 @@
+form.form--custom
+    a
+        color: inherit
+
+        &:hover
+            color: $facebook
+            text-decoration: underline
+            text-decoration-color: $facebook
+
+    .form-group
+        margin-bottom: 10px
+
+        &--password
+            position: relative
+
+            .form-control
+                padding-right: 40px
+
+            .password-hide
+                display: flex
+                justify-content: center
+                align-items: center
+
+                position: absolute
+                bottom: 0
+                right: 15px
+
+                transform: translateY(-5px)
+
+                cursor: pointer
+
+                width: 25px
+                
+                @media screen and ($breakpoint--sm)
+                    transform: translateY(-12.5px)
+
+                &.hide
+                    .icon--visible
+                        display: none
+
+                &.show
+                    .icon--disable
+                        display: none
+
+                img
+                    width: 100%
+                    height: 100%
+
+        .form-text
+            font-family: $font--rubik
+            font-size: 12px
+
+        label
+            font-family: $font--rubik
+            font-size: 12px
+
+            margin-bottom: 5px
+
+            &.invalid
+                span
+                    color: $red
+        
+        .form-control
+            padding: 10px 15px
+            
+            height: 35px
+
+            font-size: 14px
+
+            @media screen and ($breakpoint--sm)
+                height: 50px
+
+                font-size: 16px
+
+            &.invalid
+                border: 2px solid $red
+        
+    .custom-control
+        .custom-control-input:checked~.custom-control-label::before
+            background-color: $facebook
+            border-color: $facebook
+    
+    .form-links
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+
+        font-family: $font--rubik
+        font-size: 12px
+
+    .form-social-regs
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+        margin-top: 25px
+
+        a
+            display: flex
+            justify-content: center
+            align-items: center
+
+            width: 28px
+            height: 28px
+
+            border: 1px solid $facebook
+            border-radius: 3px
+
+            color: $facebook
+
+            transition: background-color $transition--default, color $transition--default
+
+            &:hover
+                color: #fff
+                background-color: $facebook
+
+            svg
+                width: 17px
+                height: 17px
+    
+    .form-policy,
+    .form-agreement
+        font-family: $font--rubik
+        font-size: 11px
+
+        margin-top: 20px
+
+        a
+            color: $facebook
+            text-decoration: underline
+            text-decoration-color: $facebook
+    
+    button[type="submit"]
+        margin: 25px auto 0 auto
