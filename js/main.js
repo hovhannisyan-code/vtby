@@ -18,7 +18,7 @@ jQuery(document).ready($ => {
                 $(element).hide();
             } else {
                 elementValue = elementValue.replace(/\s/g, '');
-                elementValue = elementValue.replace(inputValue, '<b>' + inputValue + '</b>');
+                elementValue = elementValue.replace(inputValue, '<b>' + inputValue.toUpperCase() + '</b>');
 
                 $(element).children('span.city').html(elementValue);
             }
@@ -73,6 +73,15 @@ jQuery(document).ready($ => {
             $dropdown.children('.dropdown__level--country').show();
             $dropdown.children('.dropdown__level--search').hide();
         }
+    });
+
+    // On ticket form switch click
+    $(document).on('click', 'button.ticket-switch', function() {
+        let fromValue = $('#from').val();
+        let toValue = $('#to').val();
+
+        $('#from').val(toValue);
+        $('#to').val(fromValue);
     });
 
     // On date dropdown button click
