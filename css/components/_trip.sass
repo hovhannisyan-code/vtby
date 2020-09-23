@@ -1,0 +1,183 @@
+.trip
+    position: relative
+
+    cursor: pointer
+
+    border-radius: 3px
+
+    box-shadow: 0px 0px 5px 1px rgba(#000, .1)
+
+    &.active
+        border: 2px solid $yellow-light
+
+    &__wrapper
+        display: flex
+        flex-direction: row
+        align-items: center
+
+        background-color: #fff
+
+        padding: 15px 25px
+
+        border-top: 1px solid #fff
+
+        &--child
+            display: none
+
+            background-color: #e0e0e0
+
+        &:first-child
+            border-top: none
+
+    &__point
+        display: flex
+        flex-direction: column
+
+        max-width: 200px
+        width: 100%
+
+        margin-right: 25px
+
+        .point__time
+            display: flex
+            flex-direction: row
+            align-items: flex-end
+
+            line-height: 1
+
+            .time__hour
+                font-size: 24px
+
+                margin-right: 15px
+
+            .time__day
+                font-size: 16px
+
+                color: $gray
+        
+        .point__place
+            line-height: 18px
+            height: 40px
+
+            text-overflow: ellipsis
+            overflow: hidden
+
+            margin-top: 5px
+
+    &__info
+        display: flex
+        flex-direction: column
+
+        font-size: 14px
+
+        width: 340px
+
+        margin-right: 50px
+
+        .info__top,
+        .info__bottom
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+
+        .info__divider
+            height: 2px
+
+            margin: 5px 0
+
+            background-color: $facebook
+
+        .info__city
+            color: $gray
+
+        .info__logo
+            width: 90px
+
+    &__price
+        position: relative
+
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        font-size: 24px
+        line-height: 1
+
+        margin-left: auto
+
+        border-left: 1px solid #ededed
+
+        padding: 0 20px
+
+        .price__value
+            margin-bottom: 10px
+
+        .price__currency
+            color: $gray
+
+    &__open
+        display: none
+
+        cursor: pointer
+
+        position: absolute
+        right: 0
+        top: 0
+
+        height: 100%
+        width: 25px
+
+        background-color: #e3f3ff
+
+        .open__wrapper
+            position: relative
+
+            width: 100%
+            height: 100%
+
+            svg
+                width: 100%
+                height: 100%
+
+            .open__info,
+            .open__arrow
+                width: 18px
+                height: 18px
+
+            .open__info
+                position: absolute
+                top: 0
+                left: 50%
+
+                transform: translateX(-50%)
+
+                color: $facebook
+
+            .open__arrow
+                position: absolute
+                top: 50%
+                left: 50%
+        
+                transform: translate(-50%, -50%)
+
+                color: $gray
+                
+                svg
+                    transform: rotate(90deg)
+
+    &--parent
+        display: flex
+        flex-direction: column
+
+        .trip__open
+            display: block
+
+        &.open
+            .trip__wrapper--child
+                display: flex
+            .trip__open
+                .open__arrow
+                    svg
+                        transform: rotate(270deg)

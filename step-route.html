@@ -21,7 +21,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
     <script src='./js/main.js' defer></script>
 </head>
-<body>
+<body class="bg-dirty">
     <div class="svg-defs">
         <svg xmlns="http://www.w3.org/2000/svg">
             <symbol id="icon-viber" viewBox="0 0 322 322">
@@ -183,6 +183,17 @@
                     </g>
                 </g>
             </symbol>
+            <symbol id="icon-info" viewBox="0 0 29.535 29.535" style="enable-background:new 0 0 29.535 29.535;">
+                <g>
+                    <path d="M14.768,0C6.611,0,0,6.609,0,14.768c0,8.155,6.611,14.767,14.768,14.767c8.154,0,14.766-6.612,14.766-14.767
+                        C29.534,6.609,22.923,0,14.768,0z M14.768,27.126c-6.83,0-12.361-5.532-12.361-12.359c0-6.828,5.531-12.362,12.361-12.362
+                        c6.824,0,12.359,5.535,12.359,12.362C27.128,21.594,21.592,27.126,14.768,27.126z" fill="currentColor"/>
+                    <polygon points="16.83,11.143 12.679,11.143 12.679,11.15 11.134,11.15 11.134,13.563 12.679,13.563 12.679,22.181 11.039,22.181 
+                        11.039,24.487 12.679,24.487 12.679,24.503 16.83,24.503 16.83,24.487 18.188,24.487 18.188,22.181 16.83,22.181 	" fill="currentColor"/>
+                    <path d="M14.726,9.504c1.395,0,2.24-0.928,2.24-2.077c-0.027-1.172-0.846-2.072-2.184-2.072c-1.336,0-2.211,0.899-2.211,2.072
+                        C12.57,8.576,13.417,9.504,14.726,9.504z" fill="currentColor"/>
+                </g>
+            </symbol>
         </svg>
     </div>
     <div class="wrapper">
@@ -255,349 +266,361 @@
                 </ul>
             </div>
         </header>
-        <section class="section section--ticket-search">
+        <section class="section section--steps">
+            <div class="section__inner">
+                <div class="steps">
+                    <div class="step current">Выбрать маршрут</div>
+                    <div class="step">Выбрать место</div>
+                    <div class="step">Указать пассажиров</div>
+                    <div class="step">Оплатить и получить билет</div>
+                </div>
+            </div>
+        </section>
+        <section class="section section--route-select pb-0">
             <div class="container">
-                <h2 class="section__heading">Продажа международных автобусных билетов</h2>
-                <form method="POST" action="#" id="ticket-form" class="ticket-form">
-                    <div class="items">
-                        <div class="item item--dropdown" data-href="#to">
-                            <input type="text" name="from" id="from" class="ticket-form__input" placeholder="Откуда" autocomplete="off" required>
-                            <div class="item__dropdown">
-                                <div class="dropdown__level dropdown__level--country">
-                                    <div class="dropdown__header">страна</div>
-                                    <ul class="dropdown__list" id="country-from">
-                                        <li class="dropdown__item">Беларусь</li>
-                                        <li class="dropdown__item">Германия</li>
-                                        <li class="dropdown__item">Польша</li>
-                                        <li class="dropdown__item">Россия</li>
-                                        <li class="dropdown__item">Украина</li>
-                                        <li class="dropdown__item">Чехия</li>
-                                    </ul>
-                                </div>
-                                <div class="dropdown__level dropdown__level--city">
-                                    <div class="dropdown__header">город</div>
-                                    <ul class="dropdown__list" id="city-from">
-                                        <li class="dropdown__item">Санкт-Петербург</li>
-                                        <li class="dropdown__item">Москва</li>
-                                        <li class="dropdown__item">Нижний Новгород</li>
-                                        <li class="dropdown__item">Самара</li>
-                                    </ul>
-                                </div>
-                                <div class="dropdown__level dropdown__level--search">
-                                    <div class="dropdown__header">город, страна</div>
-                                    <ul class="dropdown__list" id="city-from-search">
-                                        <li class="dropdown__item" data-value="Санкт-Петербург"><span class="city">Санкт-Петербург</span>, <span class="country">Россия</span></li>
-                                        <li class="dropdown__item" data-value="Бобруйск"><span class="city">Бобруйск</span>, <span class="country">Беларусь</span></li>
-                                        <li class="dropdown__item" data-value="Брест"><span class="city">Брест</span>, <span class="country">Беларусь</span></li>
-                                        <li class="dropdown__item" data-value="Минск"><span class="city">Минск</span>, <span class="country">Беларусь</span></li>
-                                        <li class="dropdown__item" data-value="Москва"><span class="city">Москва</span>, <span class="country">Россия</span></li>
-                                        <li class="dropdown__item" data-value="Оснабрюк"><span class="city">Оснабрюк</span>, <span class="country">Германия</span></li>
-                                        <li class="dropdown__item" data-value="Нижний Новгород"><span class="city">Нижний Новгород</span class="country">, <span>Россия</span></li>
-                                        <li class="dropdown__item" data-value="Самара"><span class="city">Самара</span>, <span class="country">Россия</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" class="ticket-switch">
-                            <img src="./img/icons/replace.png" alt="Icon">
+                <div class="section__inner">
+                    <h2 class="route-name">Москва - Прага</h2>
+                    <div class="timebar">
+                        <button id="timebar-slider-from-prev" class="timebar__arrow timebar__prev">
+                            <svg><use xlink:href="#icon-arrow"></use></svg>
                         </button>
-                        <div class="item item--dropdown">
-                            <input type="text" name="to" id="to" class="ticket-form__input" placeholder="Куда" autocomplete="off" required>
-                            <div class="item__dropdown">
-                                <div class="dropdown__level dropdown__level--country">
-                                    <div class="dropdown__header">страна</div>
-                                    <ul class="dropdown__list" id="country-to">
-                                        <li class="dropdown__item">Беларусь</li>
-                                        <li class="dropdown__item">Германия</li>
-                                        <li class="dropdown__item">Польша</li>
-                                        <li class="dropdown__item">Россия</li>
-                                        <li class="dropdown__item">Украина</li>
-                                        <li class="dropdown__item">Чехия</li>
-                                    </ul>
+                        <div class="timebar__slider" id="timebar-slider-from">
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">21 дек, сб</span>
                                 </div>
-                                <div class="dropdown__level dropdown__level--city">
-                                    <div class="dropdown__header">город</div>
-                                    <ul class="dropdown__list" id="city-to">
-                                        <li class="dropdown__item">Москва</li>
-                                        <li class="dropdown__item">Невель</li>
-                                        <li class="dropdown__item">Остров</li>
-                                        <li class="dropdown__item">Псков</li>
-                                        <li class="dropdown__item">Санкт-Петербург</li>
-                                        <li class="dropdown__item">Смоленск</li>
-                                        <li class="dropdown__item">Нижний Новгород</li>
-                                        <li class="dropdown__item">Самара</li>
-                                    </ul>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">22 дек, вс</span>
                                 </div>
-                                <div class="dropdown__level dropdown__level--search">
-                                    <div class="dropdown__header">город, страна</div>
-                                    <ul class="dropdown__list" id="city-to-search">
-                                        <li class="dropdown__item" data-value="Санкт-Петербург"><span class="city">Санкт-Петербург</span>, <span class="country">Россия</span></li>
-                                        <li class="dropdown__item" data-value="Бобруйск"><span class="city">Бобруйск</span>, <span class="country">Беларусь</span></li>
-                                        <li class="dropdown__item" data-value="Брест"><span class="city">Брест</span>, <span class="country">Беларусь</span></li>
-                                        <li class="dropdown__item" data-value="Минск"><span class="city">Минск</span>, <span class="country">Беларусь</span></li>
-                                        <li class="dropdown__item" data-value="Москва"><span class="city">Москва</span>, <span class="country">Россия</span></li>
-                                        <li class="dropdown__item" data-value="Оснабрюк"><span class="city">Оснабрюк</span>, <span class="country">Германия</span></li>
-                                        <li class="dropdown__item" data-value="Нижний Новгород"><span class="city">Нижний Новгород</span>, <span class="country">Россия</span></li>
-                                        <li class="dropdown__item" data-value="Самара"><span class="city">Самара</span>, <span class="country">Россия</span></li>
-                                    </ul>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day active">
+                                    <span class="has-divider">23 дек, пн</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">24 дек, вт</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">25 дек, ср</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">26 дек, чт</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">27 дек, пт</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">28 дек, сб</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">29 дек, вс</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">30 дек, пн</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="item item--date item--icon item--dropdown">
-                            <input type="text" name="there" id="there" class="ticket-form__input" autocomplete="off" placeholder="Туда" required>
-                            <div class="item__icon">
+                        <button id="timebar-slider-from-next" class="timebar__arrow timebar__next has-divider">
+                            <svg><use xlink:href="#icon-arrow"></use></svg>
+                        </button>
+                        <button class="timebar__calendar has-divider">
+                            <div class="calendar__icon">
                                 <img src="./img/icons/calendar.png" class="icon--default" alt="Icon">
                                 <img src="./img/icons/close.png" class="icon--close" alt="Icon">
                             </div>
-                            <div class="item__dropdown">
-                                <div class="dropdown__header">
-                                    <div class="dropdown__text">выберите дату отправления</div>
-                                    <div class="dropdown__buttons">
-                                        <div class="buttons__row">
-                                            <button type="button" class="button button--small active" data-type="calendar-button">Только туда</button>
-                                            <button type="button" class="button button--large" data-type="calendar-button">Только туда с открытой датой</button>
+                        </button>
+                    </div>
+                    <div class="trips">
+                        <div class="trip active">
+                            <div class="trip__wrapper">
+                                <div class="trip__point trip__point--from">
+                                    <div class="point__time">
+                                        <span class="time__hour">22:00</span>
+                                        <span class="time__day">28.12.19 сб</span>
+                                    </div>
+                                    <div class="point__place">АС Новоясеневская, Новоясеневский тупик, 4</div>
+                                </div>
+                                <div class="trip__info">
+                                    <div class="info__top">
+                                        <span class="info__seats">16 мест</span>
+                                        <div class="info__logo">
+                                            <img src="./img/logo.png" alt="Logo">
                                         </div>
-                                        <hr>
-                                        <div class="buttons__row">
-                                            <button type="button" class="button button--small" data-type="calendar-button">Туда + обратно</button>
-                                            <button type="button" class="button button--large" data-type="calendar-button">Туда + обратно с открытой датой</button>
-                                        </div>
+                                        <span class="info__time">46ч25</span>
+                                    </div>
+                                    <div class="info__divider"></div>
+                                    <div class="info__bottom">
+                                        <span class="info__city info__city--from">Москва</span>
+                                        <span class="info__transplant">Пересадок 1</span>
+                                        <span class="info__city info__city--to">Прага</span>
+                                    </div>
+                                </div>
+                                <div class="trip__point trip__point--to">
+                                    <div class="point__time">
+                                        <span class="time__hour">18:25</span>
+                                        <span class="time__day">31.12.19 вт</span>
+                                    </div>
+                                    <div class="point__place">Krizikova 2110/2b</div>
+                                </div>
+                                <div class="trip__price">
+                                    <span class="price__value">165</span>
+                                    <span class="price__currency">BYN</span>
+                                </div>
+                            </div>
+                            <div class="trip__open">
+                                <div class="open__wrapper">
+                                    <div class="open__info">
+                                        <svg><use xlink:href="#icon-info"></use></svg>
+                                    </div>
+                                    <div class="open__arrow">
+                                        <svg><use xlink:href="#icon-arrow"></use></svg>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item item--date item--icon item--dropdown">
-                            <input type="text" name="back" id="back" class="ticket-form__input" autocomplete="off" placeholder="Обратно" required>
-                            <div class="item__icon">
+                        <div class="trip">
+                            <div class="trip__wrapper">
+                                <div class="trip__point trip__point--from">
+                                    <div class="point__time">
+                                        <span class="time__hour">22:00</span>
+                                        <span class="time__day">28.12.19 сб</span>
+                                    </div>
+                                    <div class="point__place">АС Новоясеневская, Новоясеневский тупик, 4</div>
+                                </div>
+                                <div class="trip__info">
+                                    <div class="info__top">
+                                        <span class="info__seats">16 мест</span>
+                                        <div class="info__logo">
+                                            <img src="./img/logo.png" alt="Logo">
+                                        </div>
+                                        <span class="info__time">46ч25</span>
+                                    </div>
+                                    <div class="info__divider"></div>
+                                    <div class="info__bottom">
+                                        <span class="info__city info__city--from">Москва</span>
+                                        <span class="info__transplant">Пересадок 1</span>
+                                        <span class="info__city info__city--to">Прага</span>
+                                    </div>
+                                </div>
+                                <div class="trip__point trip__point--to">
+                                    <div class="point__time">
+                                        <span class="time__hour">18:25</span>
+                                        <span class="time__day">31.12.19 вт</span>
+                                    </div>
+                                    <div class="point__place">Krizikova 2110/2b</div>
+                                </div>
+                                <div class="trip__price">
+                                    <span class="price__value">165</span>
+                                    <span class="price__currency">BYN</span>
+                                </div>
+                            </div>
+                            <div class="trip__open">
+                                <div class="open__wrapper">
+                                    <div class="open__info">
+                                        <svg><use xlink:href="#icon-info"></use></svg>
+                                    </div>
+                                    <div class="open__arrow">
+                                        <svg><use xlink:href="#icon-arrow"></use></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section--route-select">
+            <div class="container">
+                <div class="section__inner">
+                    <h2 class="route-name">Прага - Москва</h2>
+                    <div class="timebar">
+                        <button id="timebar-slider-to-prev" class="timebar__arrow timebar__prev">
+                            <svg><use xlink:href="#icon-arrow"></use></svg>
+                        </button>
+                        <div class="timebar__slider" id="timebar-slider-to">
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">21 июня, пт</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">22 июня, сб</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day active">
+                                    <span class="has-divider">23 июня, вс</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">24 июня, пн</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">25 июня, вт</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">26 июня, ср</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">27 июня, чт</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">28 июня, пт</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">29 июня, сб</span>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="timebar__day">
+                                    <span class="has-divider">30 июня, вс</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="timebar-slider-to-next" class="timebar__arrow timebar__next has-divider">
+                            <svg><use xlink:href="#icon-arrow"></use></svg>
+                        </button>
+                        <button class="timebar__calendar has-divider">
+                            <div class="calendar__icon">
                                 <img src="./img/icons/calendar.png" class="icon--default" alt="Icon">
                                 <img src="./img/icons/close.png" class="icon--close" alt="Icon">
                             </div>
-                            <div class="item__dropdown">
-                                <div class="dropdown__header">
-                                    <div class="dropdown__text">выберите дату отправления</div>
-                                    <div class="dropdown__buttons">
-                                        <div class="buttons__row">
-                                            <button type="button" class="button active" data-type="calendar-button">Обратно не нужен</button>
-                                            <button type="button" class="button" data-type="calendar-button">С открытой датой</button>
+                        </button>
+                    </div>
+                    <div class="trips">
+                        <div class="trip trip--parent open">
+                            <div class="trip__wrapper">
+                                <div class="trip__point trip__point--from">
+                                    <div class="point__time">
+                                        <span class="time__hour">09:00</span>
+                                        <span class="time__day">23.06.20 вт</span>
+                                    </div>
+                                    <div class="point__place">Krizikova 2110/2b</div>
+                                </div>
+                                <div class="trip__info">
+                                    <div class="info__top">
+                                        <span class="info__seats">34 мест</span>
+                                        <div class="info__logo">
+                                            <img src="./img/logo.png" alt="Logo">
                                         </div>
+                                        <span class="info__time">44ч10</span>
                                     </div>
+                                    <div class="info__divider"></div>
+                                    <div class="info__bottom">
+                                        <span class="info__city info__city--from">Прага</span>
+                                        <span class="info__transplant">Пересадок 1</span>
+                                        <span class="info__city info__city--to">Москва</span>
+                                    </div>
+                                </div>
+                                <div class="trip__point trip__point--to">
+                                    <div class="point__time">
+                                        <span class="time__hour">05:10</span>
+                                        <span class="time__day">25.06.20 чт</span>
+                                    </div>
+                                    <div class="point__place">АС Новоясеневская, Новоясеневский тупик, 4 </div>
+                                </div>
+                                <div class="trip__price">
+                                    <span class="price__value">165</span>
+                                    <span class="price__currency">BYN</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item item--select item--dropdown">
-                            <select name="passengers" id="passengers">
-                                <option value="1">1 пассажир</option>
-                                <option value="2">2 пассажира</option>
-                                <option value="3">3 пассажира</option>
-                                <option value="4">4 пассажира</option>
-                                <option value="5">5 пассажиров</option>
-                                <option value="6">6 пассажиров</option>
-                                <option value="7">7 пассажиров</option>
-                                <option value="8">8 пассажиров</option>
-                                <option value="9">9 пассажиров</option>
-                                <option value="10">10 пассажиров</option>
-                            </select>
-                            <div class="item__preview">
-                                <input class="preview__selected" id="passengers-input" placeholder="Пассажиров" readonly disabled>
-                                <span class="preview__icon">
-                                    <svg><use xlink:href="#icon-dropdown"></use></svg>
-                                </span>
-                            </div>
-                            <div class="item__dropdown">
-                                <ul class="dropdown__list" id="passengers-list"></ul>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="button button--ticket-search">Найти билет</button>
-                </form>
-            </div>
-        </section>
-        <section class="section section--news section--underline">
-            <div class="container">
-                <h2 class="section__heading">Новости и спецпредложения</h2>
-                <div class="section__inner">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="post">
-                                <div class="post__thumbnail">
-                                    <img src="./img/posts/1.jpg" alt="Bus">
+                            <div class="trip__wrapper trip__wrapper--child">
+                                <div class="trip__point trip__point--from">
+                                    <div class="point__time">
+                                        <span class="time__hour">22:00</span>
+                                        <span class="time__day">28.12.19 сб</span>
+                                    </div>
+                                    <div class="point__place">АС Новоясеневская, Новоясеневский тупик, 4</div>
                                 </div>
-                                <div class="post__content">
-                                    <h4 class="post__title">Состояться рейсы Бобруйск-Минск-Москва-Минск-Бобруйск</h4>
-                                    <p class="post__excerpt">Информируем о том, что для граждан РБ, состоятся рейсы по маршруту Москва – Орша – Минск – Бобруйск 08.05.20...</p>
-                                    <a href="#" role="button" class="button button--link button--outline button--post">Узнать подробнее</a>
+                                <div class="trip__info">
+                                    <div class="info__top">
+                                        <span class="info__seats">16 мест</span>
+                                        <div class="info__logo">
+                                            <img src="./img/logo.png" alt="Logo">
+                                        </div>
+                                        <span class="info__time">46ч25</span>
+                                    </div>
+                                    <div class="info__divider"></div>
+                                    <div class="info__bottom">
+                                        <span class="info__city info__city--from">Москва</span>
+                                        <span class="info__transplant">Пересадок 1</span>
+                                        <span class="info__city info__city--to">Прага</span>
+                                    </div>
+                                </div>
+                                <div class="trip__point trip__point--to">
+                                    <div class="point__time">
+                                        <span class="time__hour">18:25</span>
+                                        <span class="time__day">31.12.19 вт</span>
+                                    </div>
+                                    <div class="point__place">Krizikova 2110/2b</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="post">
-                                <div class="post__thumbnail">
-                                    <img src="./img/posts/2.jpg" alt="Bus">
-                                </div>
-                                <div class="post__content">
-                                    <h4 class="post__title">Изменения в расписании</h4>
-                                    <p class="post__excerpt">На период рождественских и новогодних праздников будут закрыты рейсы по линиям: - «Минск – Варшава» по направлению из Минска в Варшаву на 31.12.2019...</p>
-                                    <a href="#" role="button" class="button button--link button--outline button--post">Узнать подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="post">
-                                <div class="post__thumbnail">
-                                    <img src="./img/posts/3.jpg" alt="Bus">
-                                </div>
-                                <div class="post__content">
-                                    <h4 class="post__title">Изменения в расписании по маршруту Минск–Прага–Минск</h4>
-                                    <p class="post__excerpt">Добавлены рейсы с выездом из РБ по средам в 21:00 с 18.12.2019 и из Праги по пятницам в 09:00 с 20.12.2019. Рейсы...</p>
-                                    <a href="#" role="button" class="button button--link button--outline button--post">Узнать подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section section--popular-routes">
-            <div class="container">
-                <h2 class="section__heading">Популярные маршруты</h2>
-                <div class="section__inner">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="route">
-                                <div class="route__header">
-                                    <div class="route__country-flag">
-                                        <img src="./img/flags/russia.png" alt="Russia">
+                            <div class="trip__wrapper trip__wrapper--child">
+                                <div class="trip__point trip__point--from">
+                                    <div class="point__time">
+                                        <span class="time__hour">22:00</span>
+                                        <span class="time__day">28.12.19 сб</span>
                                     </div>
-                                    <div class="route__location">
-                                        <span class="route__city">Москва</span>
-                                        <span class="route__country">Россия</span>
-                                    </div>
-                                    <span class="route__open">
-                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
-                                    </span>
+                                    <div class="point__place">АС Новоясеневская, Новоясеневский тупик, 4</div>
                                 </div>
-                                <div class="route__inner">
-                                    <div class="route__variant">
-                                        <span class="route__name">Бобруйск - Москва</span>
-                                        <span class="route__price">от 45 byn</span>
+                                <div class="trip__info">
+                                    <div class="info__top">
+                                        <span class="info__seats">16 мест</span>
+                                        <div class="info__logo">
+                                            <img src="./img/logo.png" alt="Logo">
+                                        </div>
+                                        <span class="info__time">46ч25</span>
                                     </div>
-                                    <div class="route__variant">
-                                        <span class="route__name">Минск - Москва</span>
-                                        <span class="route__price">от 35 byn</span>
+                                    <div class="info__divider"></div>
+                                    <div class="info__bottom">
+                                        <span class="info__city info__city--from">Москва</span>
+                                        <span class="info__transplant">Пересадок 1</span>
+                                        <span class="info__city info__city--to">Прага</span>
                                     </div>
+                                </div>
+                                <div class="trip__point trip__point--to">
+                                    <div class="point__time">
+                                        <span class="time__hour">18:25</span>
+                                        <span class="time__day">31.12.19 вт</span>
+                                    </div>
+                                    <div class="point__place">Krizikova 2110/2b</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="route">
-                                <div class="route__header">
-                                    <div class="route__country-flag">
-                                        <img src="./img/flags/poland.png" alt="Poland">
+                            <div class="trip__open">
+                                <div class="open__wrapper">
+                                    <div class="open__info">
+                                        <svg><use xlink:href="#icon-info"></use></svg>
                                     </div>
-                                    <div class="route__location">
-                                        <span class="route__city">Варшава</span>
-                                        <span class="route__country">Польша</span>
-                                    </div>
-                                    <span class="route__open">
-                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
-                                    </span>
-                                </div>
-                                <div class="route__inner">
-                                    <div class="route__variant">
-                                        <span class="route__name">Минск - Варшава</span>
-                                        <span class="route__price">от 22.5 byn</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="route">
-                                <div class="route__header">
-                                    <div class="route__country-flag">
-                                        <img src="./img/flags/russia.png" alt="Russia">
-                                    </div>
-                                    <div class="route__location">
-                                        <span class="route__city">Санкт-Петербург</span>
-                                        <span class="route__country">Россия</span>
-                                    </div>
-                                    <span class="route__open">
-                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
-                                    </span>
-                                </div>
-                                <div class="route__inner">
-                                    <div class="route__variant">
-                                        <span class="route__name">Бобруйск - Санкт-Петербург</span>
-                                        <span class="route__price">от 27.5 byn</span>
-                                    </div>
-                                    <div class="route__variant">
-                                        <span class="route__name">Могилёв - Санкт-Петербург</span>
-                                        <span class="route__price">от 50 byn</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="route">
-                                <div class="route__header">
-                                    <div class="route__country-flag">
-                                        <img src="./img/flags/czech.png" alt="Czech">
-                                    </div>
-                                    <div class="route__location">
-                                        <span class="route__city">Прага</span>
-                                        <span class="route__country">Чехия</span>
-                                    </div>
-                                    <span class="route__open">
-                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
-                                    </span>
-                                </div>
-                                <div class="route__inner">
-                                    <div class="route__variant">
-                                        <span class="route__name">Минск - Прага</span>
-                                        <span class="route__price">от 118.75 byn</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="route">
-                                <div class="route__header">
-                                    <div class="route__country-flag">
-                                        <img src="./img/flags/germany.png" alt="Germany">
-                                    </div>
-                                    <div class="route__location">
-                                        <span class="route__city">Кёльн</span>
-                                        <span class="route__country">Германия</span>
-                                    </div>
-                                    <span class="route__open">
-                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
-                                    </span>
-                                </div>
-                                <div class="route__inner">
-                                    <div class="route__variant">
-                                        <span class="route__name">Гомель - Кёльн</span>
-                                        <span class="route__price">от 237.5 byn</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-4">
-                            <div class="route">
-                                <div class="route__header">
-                                    <div class="route__country-flag">
-                                        <img src="./img/flags/poland.png" alt="Poland">
-                                    </div>
-                                    <div class="route__location">
-                                        <span class="route__city">Краков</span>
-                                        <span class="route__country">Польша</span>
-                                    </div>
-                                    <span class="route__open">
-                                        <svg><use xlink:href="#icon-dropdown"></use></svg>
-                                    </span>
-                                </div>
-                                <div class="route__inner">
-                                    <div class="route__variant">
-                                        <span class="route__name">Минск - Краков</span>
-                                        <span class="route__price">от 35 byn</span>
+                                    <div class="open__arrow">
+                                        <svg><use xlink:href="#icon-arrow"></use></svg>
                                     </div>
                                 </div>
                             </div>
@@ -606,130 +629,25 @@
                 </div>
             </div>
         </section>
-        <section class="section section--social section--underline">
+        <section class="section section--route-submit">
             <div class="container">
                 <div class="section__inner">
-                    <div class="socials">
-                        <a href="https://vk.com/club147015234" target="_blank">
-                            <svg><use xlink:href="#icon-vk"></use></svg>
-                            ВКонтакте
-                        </a>
-                        <a href="https://www.facebook.com/VisitTour/" target="_blank">
-                            <svg><use xlink:href="#icon-facebook"></use></svg>
-                            Фейсбук
-                        </a>
-                        <a href="https://ok.ru/visittour" target="_blank">
-                            <svg><use xlink:href="#icon-ok"></use></svg>
-                            Одноклассники
-                        </a>
-                        <a href="https://www.instagram.com/visit.tour151/" target="_blank">
-                            <svg><use xlink:href="#icon-instagram"></use></svg>
-                            Инстаграм
-                        </a>
-                        <a href="#">
-                            <svg><use xlink:href="#icon-twitter" target="_blank"></use></svg>
-                            Твиттер
-                        </a>
-                        <a href="viber://chat?number=+375291484131" target="_blank">
-                            <svg><use xlink:href="#icon-viber"></use></svg>
-                            Вайбер
-                        </a>
-                        <a href="whatsapp://send?phone=+375291484131" target="_blank">
-                            <svg><use xlink:href="#icon-whatsapp"></use></svg>
-                            Ватсап
-                        </a>
-                        <a href="https://t.me/VisitTourbot" target="_blank">
-                            <svg><use xlink:href="#icon-telegram"></use></svg>
-                            Телеграм
-                        </a>
+                    <div class="route-submit">
+                        <div class="price">
+                            <span class="price__text">цена за 2 билета</span>
+                            <div class="price__wrapper">
+                                <span class="price__value">300</span>
+                                <button class="price__currency">
+                                    BYN
+                                    <svg><use xlink:href="#icon-arrow"></use></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <a href="#" role="button" class="button button--link">Продолжить</a>
                     </div>
-                    <a href="#" role="button" class="button button--link button--outline button--google-play" target="_blank">
-                        <svg><use xlink:href="#icon-gplay"></use></svg>
-                        Google Play
-                    </a>
                 </div>
             </div>
         </section>
-        <footer class="footer">
-            <div class="container">
-                <div class="row row--contact">
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <div class="footer__contact">
-                            <div class="contact__title">Справочная служба:&nbsp;</div>
-                            <div class="contact__inner">
-                                <div class="contact__phones">
-                                    <span>+375 (29) 148-41-31</span>
-                                    <span>+7 (499) 350-12-22</span>
-                                    <span>+49 (0)421 2080 3656</span>
-                                </div>
-                                <div class="contact__messengers">
-                                    <span class="messengers__title">Напишите нам</span>
-                                    <div class="messengers__icons">
-                                        <a title="Viber" href="viber://chat?number=+375291484131">
-                                            <svg><use xlink:href="#icon-viber"></use></svg>
-                                        </a>
-                                        <a title="Whatsapp" href="whatsapp://send?phone=+375291484131">
-                                            <svg><use xlink:href="#icon-whatsapp"></use></svg>
-                                        </a>
-                                        <a title="Telegram" href="https://t.me/VisitTourbot">
-                                            <svg><use xlink:href="#icon-telegram"></use></svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-9 col-lg-6">
-                        <div class="footer__subscribe">
-                            <span class="subscribe__title">Узнавайте первыми о скидках и акциях</span>
-                            <form action="#" method="POST" class="subscribe__form">
-                                <input type="text" class="input" placeholder="Электронная почта">
-                                <button type="submit">Подписаться</button>
-                            </form>
-                            <span class="subscribe__title">Присоединяйтесь к нам в социальных сетях</span>
-                            <div class="subscribe__socials">
-                                <a title="ВКонтакте" href="https://vk.com/club147015234" target="_blank">
-                                    <svg><use xlink:href="#icon-vk"></use></svg>
-                                </a>
-                                <a title="Facebook" href="https://www.facebook.com/VisitTour/" target="_blank">
-                                    <svg><use xlink:href="#icon-facebook"></use></svg>
-                                </a>
-                                <a title="Одноклассники" href="https://ok.ru/visittour" target="_blank">
-                                    <svg><use xlink:href="#icon-ok"></use></svg>
-                                </a>
-                                <a title="Instagram" href="https://www.instagram.com/visit.tour151/" target="_blank">
-                                    <svg><use xlink:href="#icon-instagram"></use></svg>
-                                </a>
-                                <a title="Twitter" href="#" target="_blank">
-                                    <svg><use xlink:href="#icon-twitter"></use></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="container">
-                <div class="row row--payment no-gutters">
-                    <div class="col">
-                        <div class="footer__payments">
-                            <img src="./img/payments.png" alt="Payments">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="container">
-                <div class="row row--copyright no-gutters">
-                    <div class="col">
-                        <div class="footer__copyright">
-                            <span class="copyright__address">УНП 790071296, СОДО "Визит-тур", Юридический адрес: Республика Беларусь, 213826, г. Бобруйск, ул. Пушкина, 151</span>
-                            <span class="copyright__text">© 2020 CОДО "Визит-тур". Все права защищены.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
 
         <!-- Modals -->
         <div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="Title" aria-hidden="true">

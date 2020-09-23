@@ -1,0 +1,57 @@
+.section.section--steps
+    padding: 0
+    
+    font-size: 14px
+
+    .steps
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+        border-bottom: 1px solid #e4e7e8
+
+        background-color: #fff
+
+        .step
+            display: flex
+            align-items: center
+            justify-content: center
+
+            position: relative
+
+            flex: 50%
+
+            padding-right: 20px
+
+            height: 45px
+
+            color: $white-alumine
+
+            clip-path: polygon(calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 0% 100%, 0 46%, 0% 0%)
+
+            &:last-child
+                &::after
+                    content: none
+
+            &::after
+                content: ''
+
+                position: absolute
+                right: 5px
+                top: 50%
+
+                transform: translateY(-50%) rotate(45deg)
+
+                border-right: 1px solid $white-alumine
+                border-top: 1px solid $white-alumine
+
+                width: 15px
+                height: 15px
+
+            &.current
+                color: $facebook
+                background-color: #f5fcfe
+
+                border-bottom: 2px solid $facebook
+    

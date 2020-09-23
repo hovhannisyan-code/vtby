@@ -169,4 +169,34 @@ jQuery(document).ready($ => {
         $(`${$(this).attr('data-href')}`).modal('show');
     });
 
+    // On trip click
+    $(document).on('click', '.trip__wrapper', function() {
+        $(this).closest('.trip').toggleClass('active');
+    });
+
+    // On parent trip open click
+    $(document).on('click', '.trip--parent .trip__open', function() {
+        $(this).closest('.trip--parent').toggleClass('open');
+    });
+
+    // Timebar slider "from"
+    $('#timebar-slider-from').slick({
+        dots: false,
+        infinite: false,
+        prevArrow: $('#timebar-slider-from-prev'),
+        nextArrow: $('#timebar-slider-from-next'),
+        slidesToShow: 5,
+        slidesToScroll: 5
+    });
+
+    // Timebar slider "to"
+    $('#timebar-slider-to').slick({
+        dots: false,
+        infinite: false,
+        prevArrow: $('#timebar-slider-to-prev'),
+        nextArrow: $('#timebar-slider-to-next'),
+        slidesToShow: 5,
+        slidesToScroll: 5
+    });
+
 });
