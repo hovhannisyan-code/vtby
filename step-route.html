@@ -201,7 +201,9 @@
         <header class="header">
             <div class="header__wrapper">
                 <div class="header__logo">
-                    <img src="./img/logo.png" alt="Logo">
+                    <a href="#">
+                        <img src="./img/logo.png" alt="Logo">
+                    </a>
                 </div>
                 <div class="header__buttons">
                     <div class="language-select">
@@ -339,12 +341,18 @@
                         <button id="timebar-slider-from-next" class="timebar__arrow timebar__next has-divider">
                             <svg><use xlink:href="#icon-arrow"></use></svg>
                         </button>
-                        <button class="timebar__calendar has-divider">
-                            <div class="calendar__icon">
+                        <div class="timebar__calendar has-divider">
+                            <div class="calendar__icon" data-type="dropdown-button" data-href="#date-from">
                                 <img src="./img/icons/calendar.png" class="icon--default" alt="Icon">
                                 <img src="./img/icons/close.png" class="icon--close" alt="Icon">
                             </div>
-                        </button>
+                            <div class="calendar__dropdown dropdown dropdown--date" id="date-from">
+                                <div class="dropdown__header">
+                                    <span class="header__text">дата отправления</span>
+                                    <button type="button" class="button button--outline" data-type="calendar-button">с открытой датой</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="trips">
                         <div class="trip active">
@@ -508,12 +516,18 @@
                         <button id="timebar-slider-to-next" class="timebar__arrow timebar__next has-divider">
                             <svg><use xlink:href="#icon-arrow"></use></svg>
                         </button>
-                        <button class="timebar__calendar has-divider">
-                            <div class="calendar__icon">
+                        <div class="timebar__calendar has-divider">
+                            <div class="calendar__icon" data-type="dropdown-button" data-href="#date-to">
                                 <img src="./img/icons/calendar.png" class="icon--default" alt="Icon">
                                 <img src="./img/icons/close.png" class="icon--close" alt="Icon">
                             </div>
-                        </button>
+                            <div class="calendar__dropdown dropdown dropdown--date" id="date-to">
+                                <div class="dropdown__header">
+                                    <span class="header__text">дата отправления</span>
+                                    <button type="button" class="button button--outline" data-type="calendar-button">с открытой датой</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="trips">
                         <div class="trip trip--parent open">
@@ -637,10 +651,15 @@
                             <span class="price__text">цена за 2 билета</span>
                             <div class="price__wrapper">
                                 <span class="price__value">300</span>
-                                <button class="price__currency">
+                                <div class="price__currency" data-type="dropdown-button" data-href="#currencies">
                                     BYN
                                     <svg><use xlink:href="#icon-arrow"></use></svg>
-                                </button>
+                                    <div id="currencies" class="dropdown dropdown--select">
+                                        <div class="dropdown__item active">BYN</div>
+                                        <div class="dropdown__item">RUR</div>
+                                        <div class="dropdown__item">EUR</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <a href="#" role="button" class="button button--link">Продолжить</a>

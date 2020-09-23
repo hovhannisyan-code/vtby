@@ -91,7 +91,14 @@ jQuery(document).ready($ => {
     $(document).on('click', '[data-type="calendar-button"]', function() {
         var $dropdown = $(this).closest('.item__dropdown');
 
+        if ($(this).is('.active')) {
+            $(this).removeClass('active');
+            
+            return;
+        }
+
         $dropdown.find('[data-type="calendar-button"]').removeClass('active');
+        $(this).siblings('[data-type="calendar-button"]').removeClass('active');
         $(this).addClass('active');
     });
 
