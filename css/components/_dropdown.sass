@@ -1,0 +1,83 @@
+.dropdown
+    display: none
+    flex-direction: column
+
+    position: absolute
+    top: 100%
+    right: 0
+
+    z-index: 9999
+
+    box-shadow: 0px 0px 5px 5px rgba(#000, 0.1)
+
+    background-color: #fff
+
+    &.show
+        display: flex
+
+    &--date
+        min-width: 340px
+
+        .dropdown__header
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+
+            padding: 10px 20px
+
+            .header__text
+                font-size: 12px
+            
+            button
+                font-size: 12px
+
+                padding: 0 10px
+
+                border: 1px solid $yellow-light
+                border-radius: 3px
+
+                color: inherit
+
+                background-color: transparent
+
+                min-width: fit-content
+                height: 25px
+
+                &:hover
+                    color: inherit
+                    background-color: $yellow
+
+                &.active
+                    background-color: $yellow-light
+
+                    border-bottom: 1px solid $yellow
+    
+    &--select
+        flex-direction: column
+
+        padding: 10px 5px
+
+        background-color: #fff
+
+        max-width: 100%
+
+        font-size: 14px
+
+        .dropdown__item
+            margin-bottom: 5px
+
+            cursor: pointer
+
+            &:last-child
+                margin-bottom: 0
+
+            &.active
+                text-decoration: underline
+                text-decoration-color: $yellow
+
+            &:hover
+                color: $yellow-light
+                
+                text-decoration: underline
+                text-decoration-color: $yellow
