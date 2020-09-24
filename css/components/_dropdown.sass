@@ -16,18 +16,29 @@
         display: flex
 
     &--date
-        min-width: 340px
+        min-width: 250px
+
+        @media screen and ($breakpoint--sm)
+            min-width: 340px
 
         .dropdown__header
             display: flex
-            flex-direction: row
+            flex-direction: column
             justify-content: space-between
             align-items: center
 
             padding: 10px 20px
 
+            @media screen and ($breakpoint--sm)
+                flex-direction: row
+
             .header__text
                 font-size: 12px
+
+                margin-bottom: 5px
+
+                @media screen and ($breakpoint--sm)
+                    margin: 0
             
             button
                 font-size: 12px

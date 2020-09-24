@@ -190,20 +190,72 @@ jQuery(document).ready($ => {
     $('#timebar-slider-from').slick({
         dots: false,
         infinite: false,
+        speed: 750,
         prevArrow: $('#timebar-slider-from-prev'),
         nextArrow: $('#timebar-slider-from-next'),
         slidesToShow: 5,
-        slidesToScroll: 5
+        slidesToScroll: 5,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    speed: 500
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    speed: 500
+                }
+            }
+        ]
     });
 
     // Timebar slider "to"
     $('#timebar-slider-to').slick({
         dots: false,
         infinite: false,
+        speed: 750,
         prevArrow: $('#timebar-slider-to-prev'),
         nextArrow: $('#timebar-slider-to-next'),
         slidesToShow: 5,
-        slidesToScroll: 5
+        slidesToScroll: 5,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    speed: 500
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    speed: 500
+                }
+            }
+        ]
     });
 
 });

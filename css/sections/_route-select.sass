@@ -21,13 +21,37 @@
         .has-divider
             border-left: 1px solid #ededed
 
+        &__opendate
+            width: 100%
+
+            color: $facebook
+            background-color: #f5fcfe
+
+            border-bottom: 2px solid $facebook
+
+            text-align: center
+
+            padding: 15px 0
+
+            span
+                padding-left: 0
+
+                @media screen and ($breakpoint--lg)
+                    padding-left: 60px
+
         &__slider
             display: flex
             flex-direction: row
             align-items: center
             justify-content: space-between
 
-            max-width: 950px
+            flex: 1
+
+            .slider__wrapper
+                flex: 0 0 100%
+
+            .slider__item
+                flex: 1
 
             & *
                 outline: none
@@ -91,6 +115,8 @@
                 justify-content: center
                 align-items: center
 
+                min-width: 20px
+
                 .icon--close
                     display: none
 
@@ -110,15 +136,3 @@
 
                 .icon--close
                     display: block
-
-    .trips
-        display: flex
-        flex-direction: column
-
-        margin-top: 15px
-
-        .trip
-            margin-bottom: 20px
-
-            &:last-child
-                margin-bottom: 0
