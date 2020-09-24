@@ -405,45 +405,6 @@ button:focus {
   border-bottom: 1px solid #b6b4b6;
 }
 
-.modal .modal-dialog .modal-header nav {
-  width: 100%;
-}
-
-.modal .modal-dialog .modal-header nav .nav-tabs {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  border: none;
-}
-
-.modal .modal-dialog .modal-header nav .nav-tabs .nav-item {
-  -webkit-box-flex: 50%;
-      -ms-flex: 50%;
-          flex: 50%;
-  height: 100%;
-  padding: 15px;
-  font-size: 14px;
-  text-align: center;
-  color: #747577;
-  border: none;
-  -webkit-transition: color 0.25s, background-color 0.25s;
-  transition: color 0.25s, background-color 0.25s;
-}
-
-.modal .modal-dialog .modal-header nav .nav-tabs .nav-item:hover {
-  text-decoration: underline;
-}
-
-.modal .modal-dialog .modal-header nav .nav-tabs .nav-item.active {
-  color: #4857a9;
-  background-color: #f5fcfe;
-  border-bottom: 2px solid #4857a9;
-}
-
 .modal .modal-dialog .modal-body {
   padding: 15px 20px 30px 20px;
   background-color: #f3f3f3;
@@ -1083,6 +1044,45 @@ form.form--custom button[type="submit"] {
   text-decoration: underline;
   -webkit-text-decoration-color: #f2bc3a;
           text-decoration-color: #f2bc3a;
+}
+
+nav {
+  width: 100%;
+}
+
+nav .nav-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: none;
+}
+
+nav .nav-tabs .nav-item {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+  height: 100%;
+  padding: 15px;
+  font-size: 14px;
+  text-align: center;
+  color: #747577;
+  border: none;
+  -webkit-transition: color 0.25s, background-color 0.25s;
+  transition: color 0.25s, background-color 0.25s;
+}
+
+nav .nav-tabs .nav-item:hover {
+  text-decoration: underline;
+}
+
+nav .nav-tabs .nav-item.active {
+  color: #4857a9;
+  background-color: #f5fcfe;
+  border-bottom: 2px solid #4857a9;
 }
 
 .header {
@@ -2181,9 +2181,9 @@ form.form--custom button[type="submit"] {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 25%;
             flex: 0 0 25%;
-    padding-right: 20px;
-    -webkit-clip-path: polygon(calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 0% 100%, 0 46%, 0% 0%);
-            clip-path: polygon(calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 0% 100%, 0 46%, 0% 0%);
+    padding-right: 15px;
+    -webkit-clip-path: polygon(calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 0% 100%, 20px 50%, 0% 0%);
+            clip-path: polygon(calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 0% 100%, 20px 50%, 0% 0%);
   }
   .section.section--steps .steps .step::after {
     content: '';
@@ -2198,8 +2198,8 @@ form.form--custom button[type="submit"] {
           transform: translateY(-50%) rotate(45deg);
   border-right: 1px solid #a3a3a3;
   border-top: 1px solid #a3a3a3;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
 }
 
 .section.section--steps .steps .step:last-child::after {
@@ -2516,4 +2516,14 @@ form.form--custom button[type="submit"] {
   .section.section--route-submit .route-submit .button {
     margin: 0;
   }
+}
+
+.section.section--route-place .route-name {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section.section--route-place .place-info {
+  margin-top: 15px;
 }
