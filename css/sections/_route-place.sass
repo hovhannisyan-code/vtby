@@ -5,4 +5,169 @@
         text-align: center
     
     .place-info
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+
+        height: 50px
+
         margin-top: 15px
+
+        .place-tabs,
+        .place-types
+            max-width: 480px
+            width: 100%
+            height: 100%
+
+            background-color: #fff
+
+            box-shadow: 0px -1px 2px 2px rgba(#000, 0.1)
+
+        .place-tabs
+            nav
+                height: 100%
+
+                .nav-tabs
+                    height: 100%
+
+                    .nav-item
+                        display: flex
+                        justify-content: center
+                        align-items: center
+
+                        padding: 0
+
+                        color: inherit
+
+                        &.active
+                            color: $facebook
+                        
+                        &:hover
+                            color: $facebook
+        
+        .place-types
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+
+            padding: 10px
+
+            .type
+                display: flex
+                flex-direction: row
+                align-items: center
+
+                &__image
+
+                &__name
+                    border-right: 1px solid #ededed
+
+                    margin-left: 5px
+                    padding-right: 10px
+
+                    &.last
+                        border-right: none
+
+                        padding-right: 0
+
+    .place-area
+        margin-top: 20px
+
+        .area__text
+            font-size: 16px
+
+            margin-bottom: 10px
+
+        .area__scheme
+            position: relative
+
+            border: 1px solid $white-alumine
+            border-radius: 10px
+
+            padding: 5px 0
+
+            background-color: #fff
+
+            .scheme__seats
+                display: flex
+                flex-direction: row-reverse
+                justify-content: center
+
+                .seats__row
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+
+                    margin-right: 5px
+
+                    width: fit-content
+
+                    &:first-child
+                        margin-right: 0px
+
+                    .seat
+                        display: flex
+                        flex-direction: row
+                        justify-content: center
+                        align-items: center
+
+                        cursor: pointer
+
+                        line-height: 1
+
+                        margin-bottom: 2px
+                        padding-left: 2px
+
+                        color: $gray
+
+                        width: 35px
+                        height: 35px
+
+                        background-repeat: no-repeat
+                        background-position: center
+                        background-size: 100%
+
+                        &:last-child
+                            margin-bottom: 0
+
+                        &:nth-child(2)
+                            margin-bottom: 15px
+
+                        &:hover
+                            color: inherit
+                            text-decoration: underline
+
+                        &--free
+                            background-image: url('../img/icons/seat-free.png')
+
+                        &--busy
+                            background-image: url('../img/icons/seat-busy.png')
+
+                            color: $white-alumine
+
+                            &:hover
+                                cursor: not-allowed
+
+                                color: $white-alumine
+                                text-decoration: none
+
+                        &--promo
+                            background-image: url('../img/icons/seat-promo.png')
+
+                        &--selected
+                            background-image: url('../img/icons/seat-selected.png')
+
+                            color: inherit
+
+            .scheme__steering-wheel
+                position: absolute
+                top: 20px
+                right: 10px
+
+                width: 35px
+                height: 35px
+
+                img
+                    width: 100%
+                    height: 100%

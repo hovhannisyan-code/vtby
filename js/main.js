@@ -258,4 +258,19 @@ jQuery(document).ready($ => {
         ]
     });
 
+    // On seat click
+    $(document).on('click', '.seat', function() {
+        if ($(this).hasClass('seat--busy'))
+            return;
+
+        $(this).closest('.scheme__seats').find('.seat').not(this).removeClass('seat--selected');
+
+        $(this).toggleClass('seat--selected');
+    });
+
+    // Init tooltip
+    $('[data-toggle="tooltip"][toggle-type="place"]').tooltip({
+        template: '<div class="tooltip tooltip--place" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+    });
+
 });
