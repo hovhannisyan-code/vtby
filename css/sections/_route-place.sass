@@ -232,6 +232,12 @@
                             margin: 0 0 2px
                             padding: 0 0 0 2px
 
+                        .number
+                            transform: rotate(90deg)
+
+                            @media screen and ($breakpoint--lg)
+                                transform: rotate(0deg)
+
                         &:last-child
                             margin-bottom: 0
 
@@ -258,12 +264,6 @@
 
                                 color: $white-alumine
                                 text-decoration: none
-
-                        .number
-                            transform: rotate(90deg)
-
-                            @media screen and ($breakpoint--lg)
-                                transform: rotate(0deg)
 
                         &--promo
                             background-image: url('../img/icons/seat-promo.png')

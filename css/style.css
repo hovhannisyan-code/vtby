@@ -2938,6 +2938,18 @@ nav .nav-tabs .nav-item.invalid span {
   }
 }
 
+.section.section--route-place .place-area .area__scheme .scheme__seats .seats__row .seat .number {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+@media screen and (min-width: 990px) {
+  .section.section--route-place .place-area .area__scheme .scheme__seats .seats__row .seat .number {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
 .section.section--route-place .place-area .area__scheme .scheme__seats .seats__row .seat:last-child {
   margin-bottom: 0;
 }
@@ -2970,18 +2982,6 @@ nav .nav-tabs .nav-item.invalid span {
   cursor: not-allowed;
   color: #a3a3a3;
   text-decoration: none;
-}
-
-.section.section--route-place .place-area .area__scheme .scheme__seats .seats__row .seat .number {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-@media screen and (min-width: 990px) {
-  .section.section--route-place .place-area .area__scheme .scheme__seats .seats__row .seat .number {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
 }
 
 .section.section--route-place .place-area .area__scheme .scheme__seats .seats__row .seat--promo {
@@ -3064,4 +3064,198 @@ nav .nav-tabs .nav-item.invalid span {
 .section.section--step-submit .row--buttons .button--outline:active {
   background-color: #f2bc3a;
   border: none;
+}
+
+.section.section--passengers .passenger {
+  margin-bottom: 40px;
+}
+
+.section.section--passengers .passenger:last-child {
+  margin-bottom: 0;
+}
+
+.section.section--passengers .passenger__title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.section.section--passengers .passenger__select {
+  background-color: #fff;
+  border: 1px solid #a3a3a3;
+  border-radius: 3px;
+}
+
+.section.section--passengers .passenger__select .select__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 45px;
+  color: #4857a9;
+  background-color: #f5fcfe;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 2px solid #4857a9;
+  border-radius: 3px 3px 0 0;
+  -webkit-box-shadow: inset 0px 1px 3px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0px 1px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+.section.section--passengers .passenger__select .select__header .header__icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.section.section--passengers .passenger__select .select__header .header__icon img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.section.section--passengers .passenger__select .select__area {
+  min-height: 340px;
+  padding: 10px;
+}
+
+.section.section--passengers .passenger__select .select__area .select__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.section.section--passengers .passenger__select .select__area .list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc((100% / 1) - 20px);
+          flex: 0 0 calc((100% / 1) - 20px);
+  cursor: pointer;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #f3f3f3;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #a3a3a3;
+  border-radius: 3px;
+  -webkit-transition: -webkit-box-shadow 0.25s;
+  transition: -webkit-box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
+}
+
+@media screen and (min-width: 578px) {
+  .section.section--passengers .passenger__select .select__area .list__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc((100% / 2) - 20px);
+            flex: 0 0 calc((100% / 2) - 20px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section.section--passengers .passenger__select .select__area .list__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc((100% / 3) - 20px);
+            flex: 0 0 calc((100% / 3) - 20px);
+  }
+}
+
+.section.section--passengers .passenger__select .select__area .list__item:hover {
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.section.section--passengers .passenger__select .select__area .list__item .item__thumbnail {
+  width: 35px;
+  height: 35px;
+}
+
+.section.section--passengers .passenger__select .select__area .list__item .item__thumbnail img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.section.section--passengers .passenger__select .select__area .list__item .item__details {
+  margin-left: 10px;
+  line-height: 1;
+}
+
+.section.section--passengers .passenger__select .select__area .list__item .item__details .item__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4857a9;
+}
+
+.section.section--passengers .passenger__select .select__area .list__item .item__details .item__info {
+  font-family: Rubik;
+  font-size: 12px;
+  color: #747577;
+  margin-top: 10px;
+}
+
+.section.section--passengers .passenger__select .select__area .list__item .item__details .item__info .item__date {
+  margin-right: 10px;
+}
+
+.section.section--passengers .passenger__form {
+  border: 1px solid #a3a3a3;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.section.section--passengers .passenger__form form .row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.section.section--passengers .passenger__form form .row > * {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.section.section--passengers .passenger__form form .form-group {
+  position: relative;
+}
+
+.section.section--passengers .passenger__form form .form-group .dropdown__icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  cursor: pointer;
+  width: 15px;
+  height: 10px;
+  color: #4857a9;
+}
+
+.section.section--passengers .passenger__form form .form-group .dropdown__icon svg {
+  width: 100%;
+  height: 100%;
 }
