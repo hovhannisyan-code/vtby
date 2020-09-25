@@ -1,14 +1,27 @@
 .section.section--step-submit
-    .button
-        max-width: 200px
+    .row--buttons
+        justify-content: space-around
 
-        color: inherit
+        @media screen and ($breakpoint--sm)
+            justify-content: space-between
 
-        &--outline
-            border: 2px solid $yellow-light
+        .button
+            width: 200px
 
-            &:hover
-                background-color: $yellow-light
+            color: inherit
 
-            &:active
-                background-color: $yellow
+            &:first-child
+                margin-bottom: 20px
+                
+                @media screen and ($breakpoint--lg)
+                    margin-bottom: 0
+
+            &--outline
+                border: 2px solid $yellow-light
+
+                &:hover
+                    background-color: $yellow-light
+
+                &:active
+                    background-color: $yellow
+                    border: none
