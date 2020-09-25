@@ -273,4 +273,10 @@ jQuery(document).ready($ => {
         template: '<div class="tooltip tooltip--place" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
     });
 
+    // Form select click
+    $(document).on('click', '.form-select .select-item', function() {
+        $(this).siblings('.select-item').removeClass('active');
+        $(this).addClass('active');
+    })
+
 });
