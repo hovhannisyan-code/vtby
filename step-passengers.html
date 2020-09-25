@@ -348,32 +348,152 @@
                     <div class="passenger__form">
                         <form action="#" method="POST" class="form--custom">
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="passenger-lastname" class="invalid">Фамилия<span>*</span></label>
+                                        <input type="text" name="passenger_lastname" class="form-control input invalid" id="passenger-lastname" placeholder="Фамилия (латиницей)" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="passenger-firstname" class="invalid">Имя<span>*</span></label>
+                                        <input type="text" name="passenger_firstname" class="form-control input invalid" id="passenger-firstname" placeholder="Имя (латиницей)" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="passenger-middlename" class="invalid">Отчество<span>*</span></label>
+                                        <input type="text" name="passenger_middlename" class="form-control input invalid" id="passenger-middlename" placeholder="Отчество (латиницей)" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="passenger-datebirth" class="invalid">Дата рождения<span>*</span></label>
+                                        <input type="text" name="passenger_datebirth" class="form-control input invalid" id="passenger-datebirth" placeholder="ДД.ММ.ГГГГ" required>
+                                        <span class="dropdown__icon">
+                                            <svg><use xlink:href="#icon-dropdown"></use></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="passenger-gender">Пол<span>*</span></label>
+                                        <input type="text" name="passenger_gender" class="form-control input input--gender" id="passenger-gender" value="male" required>
+                                        <div class="form-select form-control">
+                                            <div class="select-item active" data-value="male">
+                                                <span>Мужской</span>
+                                            </div>
+                                            <div class="select-item" data-value="female">
+                                                <span>Женский</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="passenger-doctype" class="invalid">Тип документа<span>*</span></label>
+                                        <input type="text" name="passenger_doctype" class="form-control input invalid" id="passenger-doctype" placeholder="Выберите тип документа" required>
+                                        <span class="dropdown__icon">
+                                            <svg><use xlink:href="#icon-dropdown"></use></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="passenger-docnumber" class="invalid">Номер документа<span>*</span></label>
+                                        <input type="text" name="passenger_docnumber" class="form-control input invalid" id="passenger-docnumber" placeholder="Укажите номер документа" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="passenger-docnumber" class="invalid">Телефон<span>*</span></label>
+                                        <input type="tel" name="passenger_docnumber" class="form-control input invalid" id="passenger-docnumber" placeholder="+XXXXXXXXXXXX" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span class="label--custom">Применяемые скидки для данного билета:</span><br>
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input" name="passenger_discount" id="passenger-discount-1" disabled>
+                                        <label class="form-check-label label--checkbox" for="passenger-discount-1">10% Студенты очной формы</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input" name="passenger_discount" id="passenger-discount-2">
+                                        <label class="form-check-label label--checkbox" for="passenger-discount-2">10% Инвалидам 1-й и 2-й групп</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input" name="passenger_discount" id="passenger-discount-3">
+                                        <label class="form-check-label label--checkbox" for="passenger-discount-3">10% Постоянным пассажирам</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="passenger-information">Дополнительная информация</label>
+                                        <textarea class="form-control" id="passenger-information" rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="passenger">
+                    <h3 class="passenger__title">Пасажир №1</h3>
+                    <div class="passenger__form">
+                        <form action="#" method="POST" class="form--custom">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-4">
                                     <div class="form-group">
                                         <label for="passenger-lastname">Фамилия<span>*</span></label>
                                         <input type="text" name="passenger_lastname" class="form-control input" id="passenger-lastname" placeholder="Фамилия (латиницей)" required>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-sm-6 col-lg-4">
                                     <div class="form-group">
                                         <label for="passenger-firstname">Имя<span>*</span></label>
                                         <input type="text" name="passenger_firstname" class="form-control input" id="passenger-firstname" placeholder="Имя (латиницей)" required>
                                     </div>
                                 </div>
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="passenger-middlename">Отчество<span>*</span></label>
+                                        <input type="text" name="passenger_middlename" class="form-control input" id="passenger-middlename" placeholder="Отчество (латиницей)" required>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-sm-6 col-lg-4">
                                     <div class="form-group">
-                                        <label for="passenger-datebirth">Дата рождение<span>*</span></label>
+                                        <label for="passenger-datebirth">Дата рождения<span>*</span></label>
                                         <input type="text" name="passenger_datebirth" class="form-control input" id="passenger-datebirth" placeholder="ДД.ММ.ГГГГ" required>
                                         <span class="dropdown__icon">
                                             <svg><use xlink:href="#icon-dropdown"></use></svg>
                                         </span>
                                     </div>
                                 </div>
+                                <div class="col-sm-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="passenger-gender">Пол<span>*</span></label>
+                                        <input type="text" name="passenger_gender" class="form-control input input--gender" id="passenger-gender" value="male" required>
+                                        <div class="form-select form-control">
+                                            <div class="select-item active" data-value="male">
+                                                <span>Мужской</span>
+                                            </div>
+                                            <div class="select-item" data-value="female">
+                                                <span>Женский</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-12 col-md-6 col-lg-4">
                                     <div class="form-group">
                                         <label for="passenger-doctype">Тип документа<span>*</span></label>
                                         <input type="text" name="passenger_doctype" class="form-control input" id="passenger-doctype" placeholder="Выберите тип документа" required>
@@ -382,16 +502,41 @@
                                         </span>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-12 col-md-6 col-lg-4">
                                     <div class="form-group">
                                         <label for="passenger-docnumber">Номер документа<span>*</span></label>
                                         <input type="text" name="passenger_docnumber" class="form-control input" id="passenger-docnumber" placeholder="Укажите номер документа" required>
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-12 col-md-6 col-lg-4">
                                     <div class="form-group">
                                         <label for="passenger-docnumber">Телефон<span>*</span></label>
-                                        <input type="text" name="passenger_docnumber" class="form-control input" id="passenger-docnumber" placeholder="+XXXXXXXXXXXX" required>
+                                        <input type="tel" name="passenger_docnumber" class="form-control input" id="passenger-docnumber" placeholder="+XXXXXXXXXXXX" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <span class="label--custom">Применяемые скидки для данного билета:</span><br>
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input" name="passenger_discount" id="passenger-discount-1" disabled>
+                                        <label class="form-check-label label--checkbox" for="passenger-discount-1">10% Студенты очной формы</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input" name="passenger_discount" id="passenger-discount-2">
+                                        <label class="form-check-label label--checkbox" for="passenger-discount-2">10% Инвалидам 1-й и 2-й групп</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" class="form-check-input" name="passenger_discount" id="passenger-discount-3">
+                                        <label class="form-check-label label--checkbox" for="passenger-discount-3">10% Постоянным пассажирам</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="passenger-information">Дополнительная информация</label>
+                                        <textarea class="form-control" id="passenger-information" rows="2"></textarea>
                                     </div>
                                 </div>
                             </div>

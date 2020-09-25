@@ -7,6 +7,59 @@ form.form--custom
             text-decoration: underline
             text-decoration-color: $facebook
 
+    .label--custom
+        font-family: $font--rubik
+        font-size: 12px
+
+        margin-bottom: 5px
+
+    input,
+    textarea
+        &.input--gender
+            display: none
+
+        &::placeholder
+            color: $white-alumine
+
+        &:focus
+            box-shadow: 0 0 0 0.2rem rgba($yellow-light, .5)
+
+            border-color: transparent
+
+    .form-select
+        display: flex
+        flex-direction: row
+
+        padding: 0
+
+        height: 50px
+
+        background: #fff
+
+        .select-item
+            display: flex
+            align-items: center
+            flex: 0 0 50%
+
+            cursor: pointer
+
+            text-align: center
+
+            &:last-child
+                span
+                    border-right: none
+            
+            span
+                width: 100%
+
+                border-right: 1px solid #ededed
+
+            &.active
+                color: $facebook
+                background-color: #f5fcfe
+                
+                border-bottom: 2px solid $facebook
+
     .form-group
         margin-bottom: 10px
 
@@ -60,7 +113,7 @@ form.form--custom
                 span
                     color: $red
         
-        .form-control
+        input.form-control
             padding: 10px 15px
             
             height: 35px
@@ -74,6 +127,69 @@ form.form--custom
 
             &.invalid
                 border: 2px solid $red
+
+    .form-check
+        font-size: 14px
+
+        @media screen and ($breakpoint--sm)
+            font-size: 16px
+
+        input[type="checkbox"]
+            position: absolute
+            z-index: -1
+
+            opacity: 0
+
+            &:disabled
+                & + .label--checkbox
+                    color: inherit
+
+                    &::before
+                        border-color: $white-alumine
+
+            &:checked
+                & + .label--checkbox
+                    &::before
+                        border-color: $blue
+                        background-image: url('../img/icons/checked.png')
+        
+        input[type="radio"]
+            position: absolute
+            z-index: -1
+            
+            opacity: 0
+
+            &:checked
+                & + .label--radio
+                   
+        
+        .label--checkbox
+            display: inline-flex
+            align-items: center
+
+            user-select: none
+
+            &::before 
+                content: ''
+
+                display: inline-block
+
+                width: 15px
+                height: 15px
+
+                border: 1px solid $blue
+                border-radius: 0.25em
+
+                margin-right: 5px
+
+                background-repeat: no-repeat
+                background-position: center center
+
+        .label--radio
+            width: 150px
+            height: 50px
+            
+            background-color: red
         
     .custom-control
         .custom-control-input:checked~.custom-control-label::before
