@@ -6,13 +6,18 @@
     
     .place-info
         display: flex
-        flex-direction: row
+        flex-direction: column
         justify-content: space-between
         align-items: center
 
-        height: 50px
+        height: auto
 
         margin-top: 15px
+
+        @media screen and ($breakpoint--lg)
+            flex-direction: row
+
+            height: 50px
 
         .place-tabs,
         .place-types
@@ -25,6 +30,13 @@
             box-shadow: 0px -1px 2px 2px rgba(#000, 0.1)
 
         .place-tabs
+            margin-right: 0px
+            margin-bottom: 20px
+
+            @media screen and ($breakpoint--lg)
+                margin-right: 20px
+                margin-bottom: 0px
+
             nav
                 height: 100%
 
@@ -36,7 +48,7 @@
                         justify-content: center
                         align-items: center
 
-                        padding: 0
+                        padding: 10px
 
                         color: inherit
 
@@ -50,21 +62,47 @@
             display: flex
             flex-direction: row
             justify-content: space-between
+            flex-wrap: wrap
 
-            padding: 10px
+            padding: 0
+
+            @media screen and ($breakpoint--sm)
+                padding: 10px
 
             .type
                 display: flex
                 flex-direction: row
                 align-items: center
+                justify-content: center
+                flex: 0 0 50%
 
-                &__image
+                border-bottom: 1px solid #ededed
+
+                padding: 10px 0
+
+                @media screen and ($breakpoint--sm)
+                    flex: 0 0 auto
+
+                    border-bottom: none
+
+                    padding: 0
+
+                &:nth-child(3),
+                &:nth-child(4)
+                    border-bottom: none
 
                 &__name
-                    border-right: 1px solid #ededed
-
                     margin-left: 5px
-                    padding-right: 10px
+                    padding-right: 0px
+
+                    min-width: 80px
+
+                    @media screen and ($breakpoint--sm)
+                        border-right: 1px solid #ededed
+
+                        padding-right: 10px
+
+                        min-width: 1px
 
                     &.last
                         border-right: none
@@ -72,7 +110,20 @@
                         padding-right: 0
 
     .place-area
-        margin-top: 20px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        flex: 0 0 100%
+
+        margin-top: 30px
+
+        @media screen and ($breakpoint--xs)
+            flex: 0 0 50%
+
+        @media screen and ($breakpoint--lg)
+            flex: 0 0 100%
 
         .area__text
             font-size: 16px
@@ -85,26 +136,67 @@
             border: 1px solid $white-alumine
             border-radius: 10px
 
-            padding: 5px 0
+            padding: 100px 5px 5px 5px
+
+            width: fit-content
 
             background-color: #fff
 
+            @media screen and ($breakpoint--lg)
+                width: 100%
+
+                padding: 5px 0
+
+            &--disabled
+                font-size: 0
+
+                .scheme__overlay
+                    display: flex
+                    justify-content: center
+                    align-items: center
+
+                    font-size: 16px
+                    line-height: 1
+                    text-align: center
+
+                    position: absolute
+                    top: 0
+                    left: 0
+                    z-index: 10
+
+                    width: 100%
+                    height: 100%
+
+                    padding: 0 10px
+
+                    border-radius: 10px
+
+                    background-color: rgba(#e6f4ff, .9)
+
             .scheme__seats
                 display: flex
-                flex-direction: row-reverse
+                flex-direction: column
                 justify-content: center
+
+                @media screen and ($breakpoint--lg)
+                    flex-direction: row-reverse
 
                 .seats__row
                     display: flex
-                    flex-direction: column
+                    flex-direction: row
                     justify-content: center
 
-                    margin-right: 5px
+                    margin: 10px 0 0 0
 
                     width: fit-content
 
+                    @media screen and ($breakpoint--lg)
+                        flex-direction: column
+
+                        margin: 0 10px 0 0
+
                     &:first-child
-                        margin-right: 0px
+                        margin: 0
 
                     .seat
                         display: flex
@@ -116,23 +208,38 @@
 
                         line-height: 1
 
-                        margin-bottom: 2px
-                        padding-left: 2px
+                        margin: 0 2px 0 0
+                        padding: 0
 
                         color: $gray
 
-                        width: 35px
-                        height: 35px
+                        width: 40px
+                        height: 40px
 
                         background-repeat: no-repeat
                         background-position: center
                         background-size: 100%
 
+                        transform: rotate(-90deg)
+
+                        @media screen and ($breakpoint--sm)
+                            width: 35px
+                            height: 35px
+
+                        @media screen and ($breakpoint--lg)
+                            transform: rotate(0deg)
+
+                            margin: 0 0 2px
+                            padding: 0 0 0 2px
+
                         &:last-child
                             margin-bottom: 0
 
                         &:nth-child(2)
-                            margin-bottom: 15px
+                            margin: 0 15px 0 0
+
+                            @media screen and ($breakpoint--lg)
+                                margin: 0 0 15px 0
 
                         &:hover
                             color: inherit
@@ -152,6 +259,12 @@
                                 color: $white-alumine
                                 text-decoration: none
 
+                        .number
+                            transform: rotate(90deg)
+
+                            @media screen and ($breakpoint--lg)
+                                transform: rotate(0deg)
+
                         &--promo
                             background-image: url('../img/icons/seat-promo.png')
 
@@ -163,10 +276,23 @@
             .scheme__steering-wheel
                 position: absolute
                 top: 20px
-                right: 10px
+                right: auto
+                left: 10px
 
-                width: 35px
-                height: 35px
+                width: 40px
+                height: 40px
+
+                transform: rotate(-90deg)
+
+                @media screen and ($breakpoint--sm)
+                    width: 35px
+                    height: 35px
+
+                @media screen and ($breakpoint--lg)
+                    left: auto
+                    right: 10px
+
+                    transform: rotate(0deg)
 
                 img
                     width: 100%
