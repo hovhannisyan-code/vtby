@@ -1,0 +1,164 @@
+.section.section--passengers
+    .passenger
+        margin-bottom: 40px
+
+        &:last-child
+            margin-bottom: 0
+
+        &__title
+            font-size: 22px
+            font-weight: 600
+
+            margin-bottom: 15px
+
+        &__select
+            background-color: #fff
+
+            border: 1px solid $white-alumine
+            border-radius: 3px
+
+            .select__header
+                display: flex
+                justify-content: center
+                align-items: center
+
+                position: relative
+
+                height: 45px
+
+                color: $facebook
+                background-color: #f5fcfe
+
+                font-weight: 600
+                text-transform: uppercase
+
+                border-bottom: 2px solid $facebook
+                border-radius: 3px 3px 0 0
+
+                box-shadow: inset 0px 1px 3px 1px rgba(#000, .1)
+
+                .header__icon
+                    position: absolute
+                    top: 50%
+                    right: 10px
+
+                    transform: translateY(-50%)
+
+                    cursor: pointer
+
+                    width: 18px
+                    height: 18px
+
+                    img
+                        width: 100%
+                        height: 100%
+
+                        vertical-align: top
+
+            .select__area
+                min-height: 340px
+
+                padding: 10px
+
+                .select__list
+                    display: flex
+                    flex-direction: row
+                    flex-wrap: wrap
+
+                .list__item
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    flex: 0 0 calc((100% / 1) - 20px)
+
+                    cursor: pointer
+                    
+                    height: fit-content
+
+                    background-color: $white-dark
+
+                    padding: 10px
+                    margin: 10px
+
+                    border: 1px solid $white-alumine
+                    border-radius: 3px
+
+                    transition: box-shadow $transition--default
+
+                    @media screen and ($breakpoint--sm)
+                        flex: 0 0 calc((100% / 2) - 20px)
+
+                    @media screen and ($breakpoint--md)
+                        flex: 0 0 calc((100% / 3) - 20px)
+
+                    &:hover
+                        box-shadow: 0px 0px 5px 1px rgba(#000, .1)
+
+                    .item__thumbnail
+                        width: 35px
+                        height: 35px
+
+                        img
+                            width: 100%
+                            height: 100%
+
+                            vertical-align: top
+
+                    .item__details
+                        margin-left: 10px
+
+                        line-height: 1
+
+                        .item__name
+                            font-size: 14px
+                            font-weight: 600
+
+                            color: $facebook
+
+                        .item__info
+                            font-family: $font--rubik
+                            font-size: 12px
+
+                            color: $gray
+
+                            margin-top: 10px
+
+                            .item__date
+                                margin-right: 10px
+
+        &__form
+            border: 1px solid $white-alumine
+            border-radius: 3px
+
+            padding: 20px
+
+            form
+                .row
+                    margin-left: -10px
+                    margin-right: -10px
+
+                    & > *
+                        padding-left: 10px
+                        padding-right: 10px
+
+                .form-group
+                    position: relative
+
+                    .dropdown__icon
+                        position: absolute
+                        right: 15px
+                        top: 50%
+
+                        cursor: pointer
+
+                        width: 15px
+                        height: 10px
+
+                        color: $facebook
+
+                        svg
+                            width: 100%
+                            height: 100%
+
+
+
