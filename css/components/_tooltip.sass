@@ -1,7 +1,20 @@
 .tooltip
+    .tooltip-inner
+        font-family: $font--rubik
+        font-size: 12px
+
     &--place
         .tooltip-inner
-            font-family: $font--rubik
-            font-size: 12px
-
             background-color: #012134
+        
+        .arrow
+            &::before
+                border-top-color: #012134
+
+    &--hint
+        .tooltip-inner
+            background-color: $facebook
+
+        .arrow
+            &::before
+                border-top-color: $facebook

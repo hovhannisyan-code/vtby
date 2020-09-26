@@ -1,0 +1,145 @@
+.section.section--payment
+    padding: 0
+
+    .col--details,
+    .col--payment
+        min-height: calc(100vh - 121px)
+
+        padding-top: 40px
+
+        .title
+            display: inline-block
+
+            font-size: 22px
+            font-weight: 600
+
+            margin-bottom: 15px
+
+    .col--details
+        background-color: #fff
+
+        border-right: 1px solid $white-alumine
+
+        height: 400px
+
+        .details
+            max-width: 450px
+
+            margin-left: auto
+            margin-right: 35px
+
+            &-block
+                border: 1px solid $white-alumine
+                border-radius: 3px
+
+                .details__tabs
+                    .nav-item
+                        display: flex
+                        align-items: center
+                        justify-content: center
+
+                        padding: 0
+
+                        height: 45px
+
+                        span
+                            display: inline-block
+
+                            width: 100%
+
+                            border-right: 1px solid #ededed
+
+                .details__info
+                    font-size: 12px
+                    font-family: $font--roboto
+
+                    padding: 10px 20px
+
+                    background-color: $white-dark
+
+                    .info__item
+                        display: block
+
+                        margin-bottom: 5px
+
+                        &:last-child
+                            margin-bottom: 0
+
+                    .info__price
+                        font-family: $font--rubik
+
+                        .price__text
+                            color: inherit
+
+                            .icon
+                                margin-left: 5px
+
+                                color: $facebook
+
+                                cursor: pointer
+
+                            svg
+                                width: 15px
+                                height: 15px
+
+                            span:first-child
+                                margin-right: 15px
+                        
+                        .price__wrapper
+                            .price__value:nth-child(2)
+                                min-width: 130px
+
+                    hr
+                        margin: 10px 0
+
+    .col--payment
+        .payment
+            max-width: 600px
+
+            margin-right: auto
+            margin-left: 20px
+
+            &-block
+                display: flex
+                flex-direction: row
+
+                min-height: 380px
+
+                .payment__bar
+                    flex: 0 0 15px
+                    height: 100%
+
+                    border: 1px solid $white-alumine
+                    border-radius: 5px
+
+                    background-color: #fff
+
+                .payment__form
+                    flex: 1
+                    height: 100px
+
+                    margin-left: 30px
+
+                    .label--custom
+                        display: block
+
+                        font-size: 14px
+
+                    .form-check
+                        font-size: 14px
+                        
+                        &--agreement
+                            text-decoration: underline
+                            
+                            &:hover
+                                color: $facebook
+                                text-decoration-color: $facebook
+
+                    .form-group
+                        &--email
+                            label
+                                font-size: 14px
+                                line-height: 1
+                            
+                            input
+                                max-width: 300px

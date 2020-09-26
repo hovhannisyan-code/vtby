@@ -268,15 +268,20 @@ jQuery(document).ready($ => {
         $(this).toggleClass('seat--selected');
     });
 
-    // Init tooltip
+    // Init place tooltip
     $('[data-toggle="tooltip"][toggle-type="place"]').tooltip({
         template: '<div class="tooltip tooltip--place" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+    });
+
+    // Init hint tooltip
+    $('[data-toggle="tooltip"][toggle-type="hint"]').tooltip({
+        template: '<div class="tooltip tooltip--hint" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
     });
 
     // Form select click
     $(document).on('click', '.form-select .select-item', function() {
         $(this).siblings('.select-item').removeClass('active');
         $(this).addClass('active');
-    })
+    });
 
 });

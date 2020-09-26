@@ -427,14 +427,18 @@ form.form--custom a:hover {
           text-decoration-color: #4857a9;
 }
 
-form.form--custom .label--custom {
+form.form--custom label {
+  cursor: pointer;
+}
+
+form.form--custom label.label--custom {
   font-family: Rubik;
   font-size: 12px;
   margin-bottom: 5px;
 }
 
-form.form--custom input.input--gender,
-form.form--custom textarea.input--gender {
+form.form--custom input.input--hidden,
+form.form--custom textarea.input--hidden {
   display: none;
 }
 
@@ -465,7 +469,7 @@ form.form--custom textarea:focus {
   border-color: transparent;
 }
 
-form.form--custom .form-select {
+form.form--custom .form-select--gender {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -478,7 +482,7 @@ form.form--custom .form-select {
   background: #fff;
 }
 
-form.form--custom .form-select .select-item {
+form.form--custom .form-select--gender .select-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -492,19 +496,29 @@ form.form--custom .form-select .select-item {
   text-align: center;
 }
 
-form.form--custom .form-select .select-item:last-child span {
+form.form--custom .form-select--gender .select-item:last-child span {
   border-right: none;
 }
 
-form.form--custom .form-select .select-item span {
+form.form--custom .form-select--gender .select-item span {
   width: 100%;
   border-right: 1px solid #ededed;
 }
 
-form.form--custom .form-select .select-item.active {
+form.form--custom .form-select--gender .select-item.active {
   color: #4857a9;
   background-color: #f5fcfe;
   border-bottom: 2px solid #4857a9;
+}
+
+form.form--custom .form-select--payment-system {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 form.form--custom .form-group {
@@ -625,6 +639,11 @@ form.form--custom .form-check input[type="radio"] {
   opacity: 0;
 }
 
+form.form--custom .form-check input[type="radio"]:checked + .label--radio-default::before {
+  border-color: #4dc4f5;
+  background-image: url("../img/icons/checked-radio.png");
+}
+
 form.form--custom .form-check .label--checkbox {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -641,6 +660,7 @@ form.form--custom .form-check .label--checkbox {
 form.form--custom .form-check .label--checkbox::before {
   content: '';
   display: inline-block;
+  vertical-align: middle;
   width: 15px;
   height: 15px;
   border: 1px solid #4dc4f5;
@@ -654,6 +674,20 @@ form.form--custom .form-check .label--radio {
   width: 150px;
   height: 50px;
   background-color: red;
+}
+
+form.form--custom .form-check .label--radio-default::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #747577;
+  border-radius: 50%;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
 }
 
 form.form--custom .custom-control .custom-control-input:checked ~ .custom-control-label::before {
@@ -1239,10 +1273,25 @@ nav .nav-tabs .nav-item.invalid span {
   color: #d24a43;
 }
 
-.tooltip--place .tooltip-inner {
+.tooltip .tooltip-inner {
   font-family: Rubik;
   font-size: 12px;
+}
+
+.tooltip--place .tooltip-inner {
   background-color: #012134;
+}
+
+.tooltip--place .arrow::before {
+  border-top-color: #012134;
+}
+
+.tooltip--hint .tooltip-inner {
+  background-color: #4857a9;
+}
+
+.tooltip--hint .arrow::before {
+  border-top-color: #4857a9;
 }
 
 .reserve-reset {
@@ -1301,9 +1350,96 @@ nav .nav-tabs .nav-item.invalid span {
           box-shadow: 0px -1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+.price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 10px;
+}
+
+.price__text {
+  font-size: 12px;
+  color: #747577;
+}
+
+.price__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-box-shadow: inset 0px 1px 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0px 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.price__value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+  font-size: 24px;
+  min-width: 100px;
+  border-left: 1px solid #ededed;
+}
+
+.price__value:first-child {
+  border-left: none;
+}
+
+.price__currency {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  cursor: pointer;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 100%;
+  background-color: transparent;
+  padding: 0 5px;
+  font-size: 14px;
+  border: none;
+  border-left: 1px solid #ededed;
+}
+
+.price__currency svg {
+  width: 10px;
+  height: 15px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  color: #747577;
+}
+
 .header {
   position: relative;
   background: #f3f3f3;
+  max-height: 75px;
   border-bottom: 1px solid #b6b4b6;
 }
 
@@ -2644,87 +2780,6 @@ nav .nav-tabs .nav-item.invalid span {
   }
 }
 
-.section.section--route-submit .route-submit .price {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-right: 10px;
-}
-
-.section.section--route-submit .route-submit .price__text {
-  font-size: 12px;
-  color: #747577;
-}
-
-.section.section--route-submit .route-submit .price__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  height: 50px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  border-radius: 3px;
-  background-color: #fff;
-  -webkit-box-shadow: inset 0px 1px 1px 2px rgba(0, 0, 0, 0.1);
-          box-shadow: inset 0px 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.section.section--route-submit .route-submit .price__value {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 10px;
-  font-size: 24px;
-  min-width: 100px;
-}
-
-.section.section--route-submit .route-submit .price__currency {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  cursor: pointer;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: 100%;
-  background-color: transparent;
-  padding: 0 5px;
-  font-size: 14px;
-  border: none;
-  border-left: 1px solid #ededed;
-}
-
-.section.section--route-submit .route-submit .price__currency svg {
-  width: 10px;
-  height: 15px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  color: #747577;
-}
-
 .section.section--route-submit .route-submit .button {
   color: inherit;
   max-width: 200px;
@@ -3408,4 +3463,169 @@ nav .nav-tabs .nav-item.invalid span {
 .section.section--passengers .passenger__form form .form-group .dropdown__icon svg {
   width: 100%;
   height: 100%;
+}
+
+.section.section--payment {
+  padding: 0;
+}
+
+.section.section--payment .col--details,
+.section.section--payment .col--payment {
+  min-height: calc(100vh - 121px);
+  padding-top: 40px;
+}
+
+.section.section--payment .col--details .title,
+.section.section--payment .col--payment .title {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.section.section--payment .col--details {
+  background-color: #fff;
+  border-right: 1px solid #a3a3a3;
+  height: 400px;
+}
+
+.section.section--payment .col--details .details {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: 35px;
+}
+
+.section.section--payment .col--details .details-block {
+  border: 1px solid #a3a3a3;
+  border-radius: 3px;
+}
+
+.section.section--payment .col--details .details-block .details__tabs .nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  height: 45px;
+}
+
+.section.section--payment .col--details .details-block .details__tabs .nav-item span {
+  display: inline-block;
+  width: 100%;
+  border-right: 1px solid #ededed;
+}
+
+.section.section--payment .col--details .details-block .details__info {
+  font-size: 12px;
+  font-family: Roboto;
+  padding: 10px 20px;
+  background-color: #f3f3f3;
+}
+
+.section.section--payment .col--details .details-block .details__info .info__item {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.section.section--payment .col--details .details-block .details__info .info__item:last-child {
+  margin-bottom: 0;
+}
+
+.section.section--payment .col--details .details-block .details__info .info__price {
+  font-family: Rubik;
+}
+
+.section.section--payment .col--details .details-block .details__info .info__price .price__text {
+  color: inherit;
+}
+
+.section.section--payment .col--details .details-block .details__info .info__price .price__text .icon {
+  margin-left: 5px;
+  color: #4857a9;
+  cursor: pointer;
+}
+
+.section.section--payment .col--details .details-block .details__info .info__price .price__text svg {
+  width: 15px;
+  height: 15px;
+}
+
+.section.section--payment .col--details .details-block .details__info .info__price .price__text span:first-child {
+  margin-right: 15px;
+}
+
+.section.section--payment .col--details .details-block .details__info .info__price .price__wrapper .price__value:nth-child(2) {
+  min-width: 130px;
+}
+
+.section.section--payment .col--details .details-block .details__info hr {
+  margin: 10px 0;
+}
+
+.section.section--payment .col--payment .payment {
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.section.section--payment .col--payment .payment-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  min-height: 380px;
+}
+
+.section.section--payment .col--payment .payment-block .payment__bar {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 15px;
+          flex: 0 0 15px;
+  height: 100%;
+  border: 1px solid #a3a3a3;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.section.section--payment .col--payment .payment-block .payment__form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100px;
+  margin-left: 30px;
+}
+
+.section.section--payment .col--payment .payment-block .payment__form .label--custom {
+  display: block;
+  font-size: 14px;
+}
+
+.section.section--payment .col--payment .payment-block .payment__form .form-check {
+  font-size: 14px;
+}
+
+.section.section--payment .col--payment .payment-block .payment__form .form-check--agreement {
+  text-decoration: underline;
+}
+
+.section.section--payment .col--payment .payment-block .payment__form .form-check--agreement:hover {
+  color: #4857a9;
+  -webkit-text-decoration-color: #4857a9;
+          text-decoration-color: #4857a9;
+}
+
+.section.section--payment .col--payment .payment-block .payment__form .form-group--email label {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.section.section--payment .col--payment .payment-block .payment__form .form-group--email input {
+  max-width: 300px;
 }

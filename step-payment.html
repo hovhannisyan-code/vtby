@@ -194,6 +194,11 @@
                         C12.57,8.576,13.417,9.504,14.726,9.504z" fill="currentColor"/>
                 </g>
             </symbol>
+            <symbol id="icon-hint" viewBox="0 0 512 512">
+                <path d="m277.332031 384c0 11.78125-9.550781 21.332031-21.332031 21.332031s-21.332031-9.550781-21.332031-21.332031 9.550781-21.332031 21.332031-21.332031 21.332031 9.550781 21.332031 21.332031zm0 0" fill="currentColor"/>
+                <path d="m256 512c-141.164062 0-256-114.835938-256-256s114.835938-256 256-256 256 114.835938 256 256-114.835938 256-256 256zm0-480c-123.519531 0-224 100.480469-224 224s100.480469 224 224 224 224-100.480469 224-224-100.480469-224-224-224zm0 0" fill="currentColor"/>
+                <path d="m256 314.667969c-8.832031 0-16-7.167969-16-16v-21.546875c0-20.308594 12.886719-38.507813 32.042969-45.269532 25.492187-8.980468 42.625-36.140624 42.625-55.851562 0-32.363281-26.304688-58.667969-58.667969-58.667969s-58.667969 26.304688-58.667969 58.667969c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16c0-49.984375 40.664063-90.667969 90.667969-90.667969s90.667969 40.683594 90.667969 90.667969c0 35.585938-28.097657 73.367188-63.980469 86.039062-6.398438 2.238282-10.6875 8.316407-10.6875 15.101563v21.527344c0 8.832031-7.167969 16-16 16zm0 0" fill="currentColor"/>
+            </symbol>
         </svg>
     </div>
     <div class="wrapper">
@@ -273,284 +278,187 @@
                 <div class="steps">
                     <div class="step">Выбрать маршрут</div>
                     <div class="step">Выбрать место</div>
-                    <div class="step current">Указать пассажиров</div>
-                    <div class="step">Оплатить и получить билет</div>
+                    <div class="step">Указать пассажиров</div>
+                    <div class="step current">Оплатить и получить билет</div>
                 </div>
             </div>
         </section>
-        <section class="section section--passengers">
-            <div class="container">
-                <div class="passenger">
-                    <h3 class="passenger__title">Пассажир №1</h3>
-                    <div class="passenger__select">
-                        <div class="select__header">
-                            <span>Выберите пассажира</span>
-                            <div class="header__icon">
-                                <img src="./img/icons/close.png" alt="Icon">
+        <section class="section section--payment">
+            <div class="row no-gutters">
+                <div class="col col--details">
+                    <div class="details">
+                        <span class="title title--details">Проверьте данные</span>
+                        <div class="details-block">
+                            <div class="details__tabs">
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="place-to-tab" data-toggle="tab" href="#place-to" role="tab" aria-controls="place-to" aria-selected="true">
+                                            <span>Поездка туда</span>
+                                        </a>
+                                        <a class="nav-item nav-link" id="place-from-tab" data-toggle="tab" href="#place-from" role="tab" aria-controls="place-from" aria-selected="false">
+                                            <span>Поездка обратно</span>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="place-to" role="tabpanel" aria-labelledby="place-to-tab">
+                                    <div class="details__info">
+                                        <span class="info__item"><b>Маршрут:</b> Санкт-Петербург - Бобруйск</span>
+                                        <span class="info__item"><b>Отправление:</b> 29.12.19 вс в 19:00 АВ, наб. Обводного канала, 36</span>
+                                        <span class="info__item"><b>Прибытие:</b> 30.12.19 пн в 09:00 АВ, ул. Станционная, 5</span>
+                                        <span class="info__item"><b>Время в пути:</b> 10ч 10мин</span>
+                                        <span class="info__item"><b>Пересадок:</b> 0</span>
+                                        <span class="info__item"><b>Мест:</b> 1</span>
+                                        <hr>
+                                        <span class="info__item info__item--title">Пассажир №1</span>
+                                        <span class="info__item"><b>ФИО:</b> Иван Иванович Иванов</span>
+                                        <span class="info__item"><b>Дата рождения:</b> 29.09.2012</span>
+                                        <span class="info__item"><b>Документ №:</b> PX1234567</span>
+                                        <span class="info__item"><b>Телефон:</b> +375291234567</span>
+                                        <span class="info__item"><b>Доп. инф.:</b> номер вайбера +375291234567</span>
+                                        <hr>
+                                        <div class="info__price">
+                                            <div class="price__text">
+                                                <span>цена за 1 билет</span>
+                                                <span>
+                                                    со скидкой 
+                                                    <span class="icon" data-toggle="tooltip" toggle-type="hint" data-placement="top" title="Скидка 50% (дети от 12 лет)">
+                                                        <svg><use xlink:href="#icon-hint"></use></svg>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="price__wrapper">
+                                                <div class="price__value">55</div>
+                                                <div class="price__value">27.5</div>
+                                                <div class="price__currency" data-type="dropdown-button" data-href="#currencies">
+                                                    BYN
+                                                    <svg><use xlink:href="#icon-arrow"></use></svg>
+                                                    <div id="currencies" class="dropdown dropdown--select">
+                                                        <div class="dropdown__item active">BYN</div>
+                                                        <div class="dropdown__item">RUR</div>
+                                                        <div class="dropdown__item">EUR</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="place-from" role="tabpanel" aria-labelledby="place-from-tab">
+                                    <div class="details__info">
+                                        <span class="info__item"><b>Маршрут:</b> Санкт-Петербург - Бобруйск</span>
+                                        <span class="info__item"><b>Отправление:</b> 29.12.19 вс в 19:00 АВ, наб. Обводного канала, 36</span>
+                                        <span class="info__item"><b>Прибытие:</b> 30.12.19 пн в 09:00 АВ, ул. Станционная, 5</span>
+                                        <span class="info__item"><b>Время в пути:</b> 10ч 10мин</span>
+                                        <span class="info__item"><b>Пересадок:</b> 0</span>
+                                        <span class="info__item"><b>Мест:</b> 1</span>
+                                        <hr>
+                                        <span class="info__item info__item--title">Пассажир №1</span>
+                                        <span class="info__item"><b>ФИО:</b> Иван Иванович Иванов</span>
+                                        <span class="info__item"><b>Дата рождения:</b> 29.09.2012</span>
+                                        <span class="info__item"><b>Документ №:</b> PX1234567</span>
+                                        <span class="info__item"><b>Телефон:</b> +375291234567</span>
+                                        <span class="info__item"><b>Доп. инф.:</b> номер вайбера +375291234567</span>
+                                        <hr>
+                                        <span class="info__item info__item--title">Пассажир №2</span>
+                                        <span class="info__item"><b>ФИО:</b> Константин Иванович Иванов</span>
+                                        <span class="info__item"><b>Дата рождения:</b> 29.09.2012</span>
+                                        <span class="info__item"><b>Документ №:</b> PX1234567</span>
+                                        <span class="info__item"><b>Телефон:</b> +375291234567</span>
+                                        <span class="info__item"><b>Доп. инф.:</b> номер вайбера +375291234567</span>
+                                        <hr>
+                                        <div class="info__price">
+                                            <div class="price__text">
+                                                <span>цена за 1 билет</span>
+                                                <span>
+                                                    со скидкой 
+                                                    <span class="icon" data-toggle="tooltip" toggle-type="hint" data-placement="top" title="Скидка 50% (дети от 12 лет)">
+                                                        <svg><use xlink:href="#icon-hint"></use></svg>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="price__wrapper">
+                                                <div class="price__value">55</div>
+                                                <div class="price__value">27.5</div>
+                                                <div class="price__currency" data-type="dropdown-button" data-href="#currencies-2">
+                                                    BYN
+                                                    <svg><use xlink:href="#icon-arrow"></use></svg>
+                                                    <div id="currencies-2" class="dropdown dropdown--select">
+                                                        <div class="dropdown__item active">BYN</div>
+                                                        <div class="dropdown__item">RUR</div>
+                                                        <div class="dropdown__item">EUR</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="select__area">
-                            <div class="select__list">
-                                <div class="list__item">
-                                    <div class="item__thumbnail">
-                                        <img src="./img/icons/man.png" alt="Man">
+                    </div>
+                </div>
+                <div class="col col--payment">
+                    <div class="payment">
+                        <span class="title title--payment">Оплата билета</span>
+                        <div class="payment-block">
+                            <div class="payment__bar"></div>
+                            <div class="payment__form">
+                                <form action="#" method="POST" class="form--custom">
+                                    <div class="form-check form-check-inline form-check--agreement">
+                                        <input type="checkbox" class="form-check-input" name="agreement" id="agreement-1">
+                                        <label class="form-check-label label--checkbox" for="agreement-1">Ознакомлен(а) и согласен(а) с правилами перевозки</label>
                                     </div>
-                                    <div class="item__details">
-                                        <span class="item__name">Ivanov Ivan</span>
-                                        <div class="item__info">
-                                            <span class="item__date">01.01.2000</span>
-                                            <span class="item__code">KB123456</span>
+                                    <div class="form-check form-check-inline form-check--agreement">
+                                        <input type="checkbox" class="form-check-input" name="agreement" id="agreement-2">
+                                        <label class="form-check-label label--checkbox" for="agreement-2">Ознакомлен(а) и согласен(а) с условиями акции</label>
+                                    </div>
+                                    <div class="form-check form-check-inline form-check--agreement">
+                                        <input type="checkbox" class="form-check-input" name="agreement" id="agreement-3">
+                                        <label class="form-check-label label--checkbox" for="agreement-3">Ознакомлен(а) и согласен(а) с условиями пересечения границы</label>
+                                    </div>
+                                    <div class="form-group form-group--email mt-2">
+                                        <label for="payment-email" class="invalid">E-mail</label>
+                                        <input type="text" name="payment_email" class="form-control input" id="payment-email" placeholder="E-mail для получения билета">
+                                    </div>
+                                    <label class="label--custom">Услуга распечатки билета</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="printout" id="printout_need" value="yes">
+                                        <label class="form-check-label label--radio-default" for="printout_need">Нужна</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="printout" id="printout_no_need" value="no">
+                                        <label class="form-check-label label--radio-default" for="printout_no_need">Не нужна</label>
+                                    </div>
+                                    <div class="form-group mt-4">
+                                        <label for="payment-system">Выбор системы оплаты</label>
+                                        <input type="text" name="payment_system" class="form-control input input--hidden" id="payment-system" value="male" required>
+                                        <div class="form-select form-select--payment-system form-control">
+                                            <div class="select-item active" data-value="card">
+                                                <span class="item__title">Картой</span>
+                                                <div class="item__thumbnail">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <span class="item__time">в течении 30 минут</span>
+                                            </div>
+                                            <div class="select-item" data-value="erip">
+                                                <span class="item__title">Картой</span>
+                                                <div class="item__thumbnail">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <span class="item__time">в течении 30 минут</span>
+                                            </div>
+                                            <div class="select-item" data-value="paypal">
+                                                <span class="item__title">Картой</span>
+                                                <div class="item__thumbnail">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <span class="item__time">в течении 30 минут</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="list__item">
-                                    <div class="item__thumbnail">
-                                        <img src="./img/icons/woman.png" alt="Woman">
-                                    </div>
-                                    <div class="item__details">
-                                        <span class="item__name">Ivanova Natalia</span>
-                                        <div class="item__info">
-                                            <span class="item__date">01.01.2000</span>
-                                            <span class="item__code">KB123456</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list__item">
-                                    <div class="item__thumbnail">
-                                        <img src="./img/icons/woman.png" alt="Woman">
-                                    </div>
-                                    <div class="item__details">
-                                        <span class="item__name">Ivanova Marina</span>
-                                        <div class="item__info">
-                                            <span class="item__date">01.01.2000</span>
-                                            <span class="item__code">KB123456</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="list__item">
-                                    <div class="item__thumbnail">
-                                        <img src="./img/icons/man.png" alt="Man">
-                                    </div>
-                                    <div class="item__details">
-                                        <span class="item__name">Ivanov Konstantin</span>
-                                        <div class="item__info">
-                                            <span class="item__date">01.01.2000</span>
-                                            <span class="item__code">KB123456</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="passenger">
-                    <h3 class="passenger__title">Пасажир №1</h3>
-                    <div class="passenger__form">
-                        <form action="#" method="POST" class="form--custom">
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-lastname" class="invalid">Фамилия<span>*</span></label>
-                                        <input type="text" name="passenger_lastname" class="form-control input invalid" id="passenger-lastname" placeholder="Фамилия (латиницей)" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-firstname" class="invalid">Имя<span>*</span></label>
-                                        <input type="text" name="passenger_firstname" class="form-control input invalid" id="passenger-firstname" placeholder="Имя (латиницей)" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-middlename" class="invalid">Отчество<span>*</span></label>
-                                        <input type="text" name="passenger_middlename" class="form-control input invalid" id="passenger-middlename" placeholder="Отчество (латиницей)" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-datebirth" class="invalid">Дата рождения<span>*</span></label>
-                                        <input type="text" name="passenger_datebirth" class="form-control input invalid" id="passenger-datebirth" placeholder="ДД.ММ.ГГГГ" required>
-                                        <span class="dropdown__icon">
-                                            <svg><use xlink:href="#icon-dropdown"></use></svg>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-gender">Пол<span>*</span></label>
-                                        <input type="text" name="passenger_gender" class="form-control input input--hidden" id="passenger-gender" value="male" required>
-                                        <div class="form-select form-control">
-                                            <div class="select-item active" data-value="male">
-                                                <span>Мужской</span>
-                                            </div>
-                                            <div class="select-item" data-value="female">
-                                                <span>Женский</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-doctype" class="invalid">Тип документа<span>*</span></label>
-                                        <input type="text" name="passenger_doctype" class="form-control input invalid" id="passenger-doctype" placeholder="Выберите тип документа" required>
-                                        <span class="dropdown__icon">
-                                            <svg><use xlink:href="#icon-dropdown"></use></svg>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-docnumber" class="invalid">Номер документа<span>*</span></label>
-                                        <input type="text" name="passenger_docnumber" class="form-control input invalid" id="passenger-docnumber" placeholder="Укажите номер документа" required>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-docnumber" class="invalid">Телефон<span>*</span></label>
-                                        <input type="tel" name="passenger_docnumber" class="form-control input invalid" id="passenger-docnumber" placeholder="+XXXXXXXXXXXX" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <span class="label--custom">Применяемые скидки для данного билета:</span><br>
-                                    <div class="form-check form-check-inline">
-                                        <input type="checkbox" class="form-check-input" name="passenger_discount_1" id="passenger-discount-1" disabled>
-                                        <label class="form-check-label label--checkbox" for="passenger-discount-1">10% Студенты очной формы</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="checkbox" class="form-check-input" name="passenger_discount_1" id="passenger-discount-2">
-                                        <label class="form-check-label label--checkbox" for="passenger-discount-2">10% Инвалидам 1-й и 2-й групп</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="checkbox" class="form-check-input" name="passenger_discount_1" id="passenger-discount-3">
-                                        <label class="form-check-label label--checkbox" for="passenger-discount-3">10% Постоянным пассажирам</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="passenger-information">Дополнительная информация</label>
-                                        <textarea class="form-control" id="passenger-information" rows="2"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="passenger">
-                    <h3 class="passenger__title">Пасажир №1</h3>
-                    <div class="passenger__form">
-                        <form action="#" method="POST" class="form--custom">
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-lastname">Фамилия<span>*</span></label>
-                                        <input type="text" name="passenger_lastname" class="form-control input" id="passenger-lastname" placeholder="Фамилия (латиницей)" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-firstname">Имя<span>*</span></label>
-                                        <input type="text" name="passenger_firstname" class="form-control input" id="passenger-firstname" placeholder="Имя (латиницей)" required>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-middlename">Отчество<span>*</span></label>
-                                        <input type="text" name="passenger_middlename" class="form-control input" id="passenger-middlename" placeholder="Отчество (латиницей)" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-datebirth">Дата рождения<span>*</span></label>
-                                        <input type="text" name="passenger_datebirth" class="form-control input" id="passenger-datebirth" placeholder="ДД.ММ.ГГГГ" required>
-                                        <span class="dropdown__icon">
-                                            <svg><use xlink:href="#icon-dropdown"></use></svg>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-gender">Пол<span>*</span></label>
-                                        <input type="text" name="passenger_gender" class="form-control input input--hidden" id="passenger-gender" value="male" required>
-                                        <div class="form-select form-select--gender form-control">
-                                            <div class="select-item active" data-value="male">
-                                                <span>Мужской</span>
-                                            </div>
-                                            <div class="select-item" data-value="female">
-                                                <span>Женский</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-doctype">Тип документа<span>*</span></label>
-                                        <input type="text" name="passenger_doctype" class="form-control input" id="passenger-doctype" placeholder="Выберите тип документа" required>
-                                        <span class="dropdown__icon">
-                                            <svg><use xlink:href="#icon-dropdown"></use></svg>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-docnumber">Номер документа<span>*</span></label>
-                                        <input type="text" name="passenger_docnumber" class="form-control input" id="passenger-docnumber" placeholder="Укажите номер документа" required>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6 col-lg-4">
-                                    <div class="form-group">
-                                        <label for="passenger-docnumber">Телефон<span>*</span></label>
-                                        <input type="tel" name="passenger_docnumber" class="form-control input" id="passenger-docnumber" placeholder="+XXXXXXXXXXXX" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <span class="label--custom">Применяемые скидки для данного билета:</span><br>
-                                    <div class="form-check form-check-inline">
-                                        <input type="checkbox" class="form-check-input" name="passenger_discount_2" id="passenger-discount-2-1" disabled>
-                                        <label class="form-check-label label--checkbox" for="passenger-discount-2-1">10% Студенты очной формы</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="checkbox" class="form-check-input" name="passenger_discount_2" id="passenger-discount-2-2">
-                                        <label class="form-check-label label--checkbox" for="passenger-discount-2-2">10% Инвалидам 1-й и 2-й групп</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="checkbox" class="form-check-input" name="passenger_discount_2" id="passenger-discount-2-3">
-                                        <label class="form-check-label label--checkbox" for="passenger-discount-2-3">10% Постоянным пассажирам</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="passenger-information">Дополнительная информация</label>
-                                        <textarea class="form-control" id="passenger-information" rows="2"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section section--step-submit pt-0">
-            <div class="container">
-                <div class="section__inner">
-                    <div class="row row--buttons no-gutters">
-                        <a href="#" role="button" class="button button--link button--outline">Шаг назад</a>
-                        <a href="#" role="button" class="button button--link">Продолжить</a>
                     </div>
                 </div>
             </div>
@@ -746,7 +654,7 @@
 
         <div class="reserve-reset">
             <span class="reset__text">сброс брони</span>
-            <span class="reset__timer">24:24</span>
+            <span class="reset__timer">21:21</span>
         </div>
 
     </div>

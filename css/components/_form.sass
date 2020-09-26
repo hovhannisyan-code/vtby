@@ -7,15 +7,18 @@ form.form--custom
             text-decoration: underline
             text-decoration-color: $facebook
 
-    .label--custom
-        font-family: $font--rubik
-        font-size: 12px
+    label
+        cursor: pointer
 
-        margin-bottom: 5px
+        &.label--custom
+            font-family: $font--rubik
+            font-size: 12px
+
+            margin-bottom: 5px
 
     input,
     textarea
-        &.input--gender
+        &.input--hidden
             display: none
 
         &::placeholder
@@ -27,38 +30,43 @@ form.form--custom
             border-color: transparent
 
     .form-select
-        display: flex
-        flex-direction: row
-
-        padding: 0
-
-        height: 50px
-
-        background: #fff
-
-        .select-item
+        &--gender   
             display: flex
-            align-items: center
-            flex: 0 0 50%
+            flex-direction: row
 
-            cursor: pointer
+            padding: 0
 
-            text-align: center
+            height: 50px
 
-            &:last-child
-                span
-                    border-right: none
-            
-            span
-                width: 100%
+            background: #fff
 
-                border-right: 1px solid #ededed
+            .select-item
+                display: flex
+                align-items: center
+                flex: 0 0 50%
 
-            &.active
-                color: $facebook
-                background-color: #f5fcfe
+                cursor: pointer
+
+                text-align: center
+
+                &:last-child
+                    span
+                        border-right: none
                 
-                border-bottom: 2px solid $facebook
+                span
+                    width: 100%
+
+                    border-right: 1px solid #ededed
+
+                &.active
+                    color: $facebook
+                    background-color: #f5fcfe
+                    
+                    border-bottom: 2px solid $facebook
+
+        &--payment-system
+            display: flex
+            flex-direction: row
 
     .form-group
         margin-bottom: 10px
@@ -151,6 +159,7 @@ form.form--custom
                 & + .label--checkbox
                     &::before
                         border-color: $blue
+
                         background-image: url('../img/icons/checked.png')
         
         input[type="radio"]
@@ -160,8 +169,11 @@ form.form--custom
             opacity: 0
 
             &:checked
-                & + .label--radio
-                   
+                & + .label--radio-default
+                    &::before
+                        border-color: $blue
+
+                        background-image: url('../img/icons/checked-radio.png')
         
         .label--checkbox
             display: inline-flex
@@ -173,6 +185,8 @@ form.form--custom
                 content: ''
 
                 display: inline-block
+
+                vertical-align: middle
 
                 width: 15px
                 height: 15px
@@ -190,6 +204,26 @@ form.form--custom
             height: 50px
             
             background-color: red
+
+        .label--radio-default
+            &::before
+               content: ''
+
+               display: inline-block
+
+               vertical-align: middle
+
+               width: 15px
+               height: 15px
+
+               border: 1px solid $gray
+               border-radius: 50%
+
+               margin-right: 5px
+
+               background-repeat: no-repeat
+               background-position: center center
+               background-size: 50%
         
     .custom-control
         .custom-control-input:checked~.custom-control-label::before
